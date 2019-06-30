@@ -1,9 +1,9 @@
 # Site settings
-title: Georgica Racu
-email: racu.george@gmail.com
-description: "Georgica Racu's personal page."
+title: George Racu
+email: me@georgeracu.com
+description: "George Racu's personal page."
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "https://georgeracu.com" # the base hostname & protocol for your site
 twitter_username: georgeracu
 github_username:  gir21
 
