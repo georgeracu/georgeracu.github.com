@@ -7,11 +7,18 @@
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+    <main class="page-content" aria-label="Content">
+      <div class="wrap container-fluid">
+      <div class="row">
+        <div class="col-sm-8">
+          {{ content }}
+        </div>
+        <div class="col-sm-4">
+            {% include twitter-timeline.html %}
+        </div>
       </div>
     </div>
+    </main>
 
     {% include footer.html %}
 

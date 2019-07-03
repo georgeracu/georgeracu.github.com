@@ -50,3 +50,31 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+// CUSTOM CSS
+
+table {
+    border-collapse: collapse;
+  }
+  
+  table,
+  td,
+  th {
+    border: 1px solid #cbcbcb;
+  }
+  
+  table thead {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: left;
+    vertical-align: bottom;
+  }
+  table td {
+    padding: 0.5em 1em;
+  }
+  
+  .wrap {
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
