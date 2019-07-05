@@ -63,7 +63,16 @@ lein deps
 lein run
 ```
 
-Navigate to http://localhost:8080 and you should get the very popular greeting "Hello world".
+Navigate to <http://localhost:8080> and you should get the very popular greeting "Hello world".
+
+### Don't forget to version your code
+
+I am using git to version my code. I presume you already know what git is and what code versioning means and you also have git installed. Therefore I would urge you to start tracking your code:
+
+```bash
+git add .
+git commit -m "Initial commit, created a default project."
+```
 
 ### Grab a drink to celebrate
 
