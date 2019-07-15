@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Clojure from zero to hero (part 3) - First endpoint"
-date: 2019-07-01 07:00:00 +0000
+date: 2019-07-08 07:00:00 +0000
 tags: [programming, clojure]
 mathjax: false
 ---

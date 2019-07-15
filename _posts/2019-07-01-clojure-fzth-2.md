@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Clojure from zero to hero (part 2)"
+title: "Clojure from zero to hero (part 2) - A bit of syntax"
 date: 2019-07-01 07:00:00 +0000
 tags: [programming, clojure]
 mathjax: false
