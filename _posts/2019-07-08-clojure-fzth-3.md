@@ -45,9 +45,8 @@ Our new resource should respond with JSON format at any GET requests that reache
   (is (=
        (:body (response-for service :get "/temperature"))
        "{\"celsius\":0,\"fahrenheit\":32}"))
-  (is (true?
-       (s/includes?
-        (:headers (response-for service :get "/temperature")) "application/json;charset=UTF-8"))))
+  (is (= "application/json;charset=UTF-8"
+        (get-in (response-for service :get "/temperature") [:headers "Content-Type"]))))
 ```
 
 For the above assertion to work we need to import `[clojure.string :as s]`. It was added in Clojure 1.8.
