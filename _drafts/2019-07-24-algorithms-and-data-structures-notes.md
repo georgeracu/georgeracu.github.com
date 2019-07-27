@@ -24,6 +24,12 @@ In simple terms represents the worst case scenario for executing an operation on
 
 ### Output: item (if found) or null/nil
 
+### Worst case scenario O(log n)
+
+### Instructions 
+
+Start from the middle, compare your element with the two halfs. Pick the half  that contains the element and repeat splitting in half, then comparing until you are left with your element. 
+
 ## Data Structures
 
 ### Array
