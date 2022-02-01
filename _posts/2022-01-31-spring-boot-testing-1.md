@@ -86,6 +86,7 @@ Lets's see how this code would look like with a bit of refactoring.
 ```java
 package com.georgeracu.blog.springboot.application.config;
 
+@Configuration
 public class CustomWebMvcConfigurer implements WebMvcConfigurer {
     
     private String allowedOrigins;
@@ -112,17 +113,19 @@ package com.georgeracu.blog.springboot.application.config;
 class CustomWebMvcConfigurerTest {
     private CustomWebMvcConfigurer configurer;
     private CorsRegistry registry;
+    private CorsRegistration corsRegistration;
 
     @BeforeEach
     void setup() {
         registry = Mockito.mock(CorsRegistry.class);
+        corsRegistration = Mockito.mock(CorsRegistration.class);
     }
 
     @ParameterizedTest
     @MethodSource("argsForCorsProvider")
-    void shouldAddCorsMappingsWhenEnabled(String allowedOrigins, int expectedSize) {
+    void shouldAddCorsMappingsWhenEnabled(String allowedOrigins) {
         // arrange
-        when(configurer.addMapping(allowedOrigins)).thenReturn(...);
+        when(configurer.addMapping(allowedOrigins)).thenReturn(corsRegistration);
         configurer = new CustomWebMvcConfigurer(allowedOrigins);
 
         // act
@@ -130,11 +133,11 @@ class CustomWebMvcConfigurerTest {
 
         // assert
         verify(configurer).addMapping(allowedOrigins);
-        verify();
+        verify(corsRegistration).allowedOrigins(allowedOrigins);
     }
 
     private static Stream<Arguments> argsForCorsProvider() {
-        return Stream.of(Arguments.of("http://example.com", 1));
+        return Stream.of(Arguments.of("http://example.com"));
     }
 }
 ```
