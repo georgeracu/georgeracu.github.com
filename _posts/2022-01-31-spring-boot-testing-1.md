@@ -125,14 +125,14 @@ class CustomWebMvcConfigurerTest {
     @MethodSource("argsForCorsProvider")
     void shouldAddCorsMappingsWhenEnabled(String allowedOrigins) {
         // arrange
-        when(configurer.addMapping(allowedOrigins)).thenReturn(corsRegistration);
+        when(registry.addMapping("/**")).thenReturn(corsRegistration);
         configurer = new CustomWebMvcConfigurer(allowedOrigins);
 
         // act
         configurer.addCorsMappings(registry);
 
         // assert
-        verify(configurer).addMapping(allowedOrigins);
+        verify(registry).addMapping("/**");
         verify(corsRegistration).allowedOrigins(allowedOrigins);
     }
 
