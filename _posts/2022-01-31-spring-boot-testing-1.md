@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Spring Boot testing - Focus on what matters"
+title: "Spring Boot testing - Focus on what matters: the code changes that we performed"
 date: 2022-01-31 07:00:00 +0000
 tags: [programming, spring boot, java, testing]
 mathjax: false
