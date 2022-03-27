@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Spring Boot testing - Focus on what matters: the code changes that we performed"
+title: "Spring Boot testing - Focus on what matters: code that we changed"
 date: 2022-01-31 07:00:00 +0000
 tags: [programming, spring boot, java, testing]
 mathjax: false
@@ -8,7 +8,7 @@ mathjax: false
 
 ## Testing in Spring Boot
 
-Time and time again we find ouserlves in the situation of writing a new micro-service in SpringBoot. Part of the TDD process is to start writing tests first. As not all the times is possible to write the tests first, we will go back and add the tests after we wrote the code. As there are many reasons to not do that, I will not enumerate them here. Let's focus on how to test what matters, versus testing what was already tested.
+Time and time again we find ourselves in the situation of writing a new micro-service in SpringBoot. Part of the TDD process is to start writing tests first. As not all the times is possible to write the tests first, we will go back and add the tests after we wrote the code. As there are many reasons to not do that, I will not enumerate them here. Let's focus on how to test what matters, versus testing what was already tested.
 
 Imports omitted for code brevity.
 
@@ -78,7 +78,7 @@ So far, we wrote a test that is testing that our CORS origins are added to the l
 
 * The test is testing that the CorsRegistry adds a mapping to the list of the allowed origins. This feels that it was tested already by the creators of the framework;
 * We are not focusing that we actually tested our custom code: adding several values to the list of the allowed origins;
-* The class TestCorsRegistry is not needed when there are powerfull mocking frameworks that allow us to mock that object and assert that custom behaviour has happened on the mock itself;
+* The class TestCorsRegistry is not needed when there are powerful mocking frameworks that allow us to mock that object and assert that custom behavior has happened on the mock itself;
 * Field injection is in our way of actually writing simpler unit tests;
 
 Lets's see how this code would look like with a bit of refactoring.
