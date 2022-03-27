@@ -12,6 +12,8 @@ You can find the source code for Jekyll at GitHub:
 
 [jekyll-organization]: https://github.com/jekyll
 
+Using [remarkjs](https://github.com/gnab/remark/wiki) to render slides from Markdown.
+
 ## Code highlighting
 
 {% highlight clojure %}

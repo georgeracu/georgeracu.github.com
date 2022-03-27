@@ -1,25 +1,7 @@
 ---
 layout: presentation
 title: TDD Workshop Presentation
-permalink: /tdd-workshop-presentation
-tags: [programming, tdd. workshop, java, testing]
-mathjax: false
+permalink: /tdd-workshop-presentation/
 ---
 
-## TDD Workshop Presentation
-
----
-
-## Agenda
-
-1. Introduction
-2. Deep-dive
-3. ...
-
-[NOTE]: Note that you need active internet connection to access remark.js script file
-
----
-
-## Introduction
-
-Hello world!
+<pre>{% include presentations/tdd-workshop-1.md %}</pre>
