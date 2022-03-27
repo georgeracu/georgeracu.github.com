@@ -7,6 +7,10 @@ url: "https://georgeracu.github.io" # the base hostname & protocol for your site
 twitter_username: georgeracu
 github_username:  georgeracu
 google_analytics: UA-53216185-7
+theme: minima
 
 # Build settings
 markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
