@@ -1,14 +1,16 @@
 ---
 layout: presentation
 title: TDD Workshop Presentation
-permalink: /tdd-workshop-presentation/
+permalink: /tdd-workshop-presentation
+tags: [programming, tdd. workshop, java, testing]
+mathjax: false
 ---
 
-# TDD Workshop Presentation
+## TDD Workshop Presentation
 
 ---
 
-# Agenda
+## Agenda
 
 1. Introduction
 2. Deep-dive
@@ -18,6 +20,6 @@ permalink: /tdd-workshop-presentation/
 
 ---
 
-# Introduction
+## Introduction
 
 Hello world!
