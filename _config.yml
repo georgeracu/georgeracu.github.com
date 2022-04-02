@@ -8,9 +8,9 @@ twitter_username: georgeracu
 github_username:  georgeracu
 google_analytics: UA-53216185-7
 
-# theme: minima
-# minima:
-#   skin: dark
+theme: minima
+minima:
+  skin: dark
 
 # Build settings
 markdown: kramdown
