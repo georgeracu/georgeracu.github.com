@@ -7,13 +7,13 @@
   <div class="container">
     {% include header.html %}
   </div>
-  <main class="container">
-    <div class="row g-5">
+  <main class="container" style="padding-top: 3em;">
+    <div class="row">
       <div class="col-md-9">
         {{ content }}
       </div>
       <div class="col-md-3">
-        <div class="position-sticky">
+        <div class="p-4">
           {% include twitter-timeline.html %}
         </div>
         <div class="p-4">

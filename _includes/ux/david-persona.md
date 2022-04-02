@@ -1,62 +1,56 @@
+<div markdown="1" class="row">
+<div markdown="1" class="col-md-5">
 
-### Role
-
-### Name
-
-David
-
-### Image
-
-<img class="img-fluid img-thumbnail rounded" src="/assets/img/mickey-mouse.jpg" alt="David" width=200 height=200/>
+<img class="img-fluid img-thumbnail rounded" src="/assets/img/mickey-mouse.jpg" alt="David" width=400 height=400/>
 
 **Image Credit:**
 
 [Accessed 2022-01-01](https://mir-s3-cdn-cf.behance.net/project_modules/1400/f807f213927301.5627a5da58274.jpg)
 
-### Quote
+</div>
+<div markdown="1" class="col-md-7">
 
-Candy donut chupa chups chocolate danish sweet. Candy canes biscuit jelly beans. Jelly beans cotton candy chocolate cake marzipan apple pie. Toffee caramels tart wafer jujubes bonbon candy.
+#### David Rice, retired
+
+<br>
 
 ### Background
 
-**Age:** 30 <br>
-**Location:** New York <br>
-**Marital Status:** Engaged <br>
-**Kids:** No <br>
-**Occupation:** Account Manager <br>
-**Education:** B.S.
+{: .table .table-hover}
+|---|---|
+|**Age:**           | 91
+|**Location:**      | London
+|**Marital Status:**| Widow
+|**Kids:**                  | Yes
+|**Occupation:**            | Engineer
+|**Education:**             | BSc.
+|**Characteristics:**       | Reliable, Caring, Committed, Action Oriented, Focused, Eager
 
-### Characteristics
+</div>
+</div>
 
-* Reliable
-* Caring
-* Committed
-* Action Oriented
-* Focused
-* Eager
+#### Skills
 
-### Goals/Needs
+{: .table .table-borderless}
+|---|---|
+|Tech literacy|████░░░░░░░░░░░░░░░░░░░░░|
+|Tech literacy|████░░░░░░░░░░░░░░░░░░░░░|
+|Tech literacy|████░░░░░░░░░░░░░░░░░░░░░|
+|Tech literacy|████░░░░░░░░░░░░░░░░░░░░░|
+|Tech literacy|████░░░░░░░░░░░░░░░░░░░░░|
 
-* Wafer sesame snaps caramels chupa chups candy. Sweet roll dessert powder powder halvah. Apple pie chocolate cake cotton candy apple pie biscuit tiramisu. Liquorice chocolate bar cupcake sweet roll
-* Gingerbread dragée pudding chupa chups carrot cake. Donut marshmallow pastry biscuit. Sugar plum ice cream bonbon.
+### Back story and goals
 
-#### TECH KNOWLEDGE
+David is a retired engineer in their 90s who has an active lifestyle and many times he forgets to take his medication. His goal is to take all his medication on time and with the prescribed dose. This app will tackle this problem with a voice enabled assistant that will schedule reminders for medication.
 
-██████████████████████████████░░░░░░░░░░░░░░░░░░░░░<br>
-n00b                                                                                                                                               expert
+### Frustrations
 
-#### KNOWS STAFF SKILLS
+* Forgetting to check his paper based reminder for his medication
+* Hard to navigate user interfaces for a tablet based app
+* Not hearing reminders from the tablet app
 
-███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<br>
-who are you?                                                                                                                                 besties!
+### Goals
 
-#### TIME AVAILABILITY
-
-███████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░<br>
-needed it yesterday                                                                                                                    I can wait
-
-### About
-
-Wafer sesame snaps caramels chupa chups candy. Sweet roll dessert powder powder halvah. Apple pie chocolate cake cotton candy apple pie biscuit tiramisu. Liquorice chocolate bar cupcake sweet roll chocolate halvah chocolate cake. Danish lollipop chocolate croissant. Candy oat cake gummies chocolate cake. Donut tart pudding toffee muffin halvah. Lollipop muffin fruitcake ice cream brownie pastry. Bear claw sugar plum bear claw topping pudding toffee caramels gummi bears marzipan. Pie fruitcake fruitcake. Danish lollipop jelly chupa chups fruitcake biscuit sweet macaroon sweet roll. Cheesecake gummies sugar plum tootsie roll chupa chups sesame snaps. Lemon drops jelly-o tiramisu cupcake cookie soufflé sweet jelly-o chupa chups. Jujubes caramels chocolate.
-
-Gingerbread dragée pudding chupa chups carrot cake. Donut marshmallow pastry biscuit. Sugar plum ice cream bonbon.
+* Take all medication on time
+* Stay healthy
+* Keep fit
