@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
-
+<body>
+  <div class="container">
     {% include header.html %}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrap container-fluid">
-      <div class="row">
-        <div class="col-sm-8">
-          {{ content }}
+  </div>
+  <main class="container">
+    <div class="row g-5">
+      <div class="col-md-9">
+        {{ content }}
+      </div>
+      <div class="col-md-3">
+        <div class="position-sticky">
+          {% include twitter-timeline.html %}
         </div>
-        <div class="col-sm-4">
-{% include countdowns.html %}
-<hr>
-            {% include twitter-timeline.html %}
+        <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            {% include component/archives.html %}
+          </ol>
         </div>
       </div>
     </div>
-    </main>
+  </main>
 
-    {% include footer.html %}
+  {% include footer.html %}
 
-  </body>
+</body>
 
 </html>

@@ -1,0 +1,8 @@
+{% for post in site.posts %}
+{% assign current_date = post.date | date: "%B %Y" %}
+{% if current_date != date %}
+<li id="y{{current_date}}">{{ current_date }}</li>
+{% assign date = current_date %}
+{% endif %}
+<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
