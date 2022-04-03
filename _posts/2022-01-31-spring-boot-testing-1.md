@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Spring Boot testing - Focus on what matters: code that we changed"
+title: "Spring Boot testing - Focus on your changes"
 date: 2022-01-31 07:00:00 +0000
 tags: [programming, spring boot, java, testing]
+description: "When writing new code you should focus your testing on the changes that you made and not on testing frameworks or libraries. They have been tested already by millions of people."
 mathjax: false
 ---
 

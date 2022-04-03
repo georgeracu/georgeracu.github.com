@@ -8,12 +8,13 @@ layout: default
 
   <ul class="list-unstyled">
     {% for post in site.posts %}
-      <li>
-        <h5>
-          <a class="text-decoration-none" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h5>
-        <p class="font-monospace">{{ post.date | date: "%b %-d, %Y" }}</p>
-      </li>
+    <li>
+      <h5>
+        <a class="text-decoration-none" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h5>
+      <p class="font-monospace">{{ post.date | date: "%b %-d, %Y" }}</p>
+      <p>{{ post.description | truncatewords: 20 }}</p>
+    </li>
     {% endfor %}
   </ul>
 
