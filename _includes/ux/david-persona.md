@@ -34,10 +34,10 @@
 {: .table .table-borderless}
 |---|---|
 |Tech literacy|████░░░░░░░░░░░░░░░░░░░░░|
-|Tech literacy|████░░░░░░░░░░░░░░░░░░░░░|
-|Tech literacy|████░░░░░░░░░░░░░░░░░░░░░|
-|Tech literacy|████░░░░░░░░░░░░░░░░░░░░░|
-|Tech literacy|████░░░░░░░░░░░░░░░░░░░░░|
+|Tech literacy|█████████████████░░░░░░░░|
+|Tech literacy|██████████░░░░░░░░░░░░░░░|
+|Tech literacy|████████████░░░░░░░░░░░░░|
+|Tech literacy|████████░░░░░░░░░░░░░░░░░|
 
 ### Back story and goals
 
