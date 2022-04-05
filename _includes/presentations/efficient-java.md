@@ -152,3 +152,39 @@ public final class Address {
     }
 }
 ```
+
+---
+
+# Immutable or not?
+
+<hr/>
+
+Consider this code
+
+```java
+private final Hotel awesomeHotel = 
+    new Hotel("My Awesome hotel", Address.defaultAddress());
+
+private final Address originalAddress = awesomeHotel.getAddress();
+originalAddress.setCity("Ugly city");
+```
+
+Even if we didn't change anything directly on the `hotel` object, we could change it indirectly by changing one of the values held.
+
+This behaviour can be fixed if we make all objects immutable.
+
+To fix our example, we need to remove all setters from class `Address`.
+
+---
+
+# Final classes
+
+<hr />
+
+A class that's final has an important message to send: `not open for extension`.
+
+In previous examples all classes are marked with `final`.
+
+By default, classes should be final.
+
+When we intend to let classes open for inheritance, we should document it. Joshua Bloch explains this term very well in his excellent book [Effective Java, 3rd edition](https://www.amazon.co.uk/Effective-Java-Joshua-Bloch-ebook/dp/B078H61SCH/ref=sr_1_1?_encoding=UTF8&keywords=Effective+Java&qid=1649185785&s=digital-text&sr=1-1) in item 19.
