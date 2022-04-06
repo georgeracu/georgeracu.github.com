@@ -9,6 +9,8 @@
 
 # What is better?
 
+<hr />
+
 By better code I mean a few things:
 
 * Immutability
@@ -26,7 +28,11 @@ We can express immutability through a few methods:
 * Immutable objects
 * Final classes and final variables
 * Immutable collections (still an object)
-* Records (Java 17+)
+* Records
+
+To have truly immutable code, we need to use all above, together.
+
+Any non-immutable or non-modifiable object will make our life harder.
 
 ---
 
@@ -181,10 +187,115 @@ To fix our example, we need to remove all setters from class `Address`.
 
 <hr />
 
-A class that's final has an important message to send: `not open for extension`.
+A class that's declared as `final` has an important message to send: `not open for inheritance`.
 
 In previous examples all classes are marked with `final`.
 
 By default, classes should be final.
 
 When we intend to let classes open for inheritance, we should document it. Joshua Bloch explains this term very well in his excellent book [Effective Java, 3rd edition](https://www.amazon.co.uk/Effective-Java-Joshua-Bloch-ebook/dp/B078H61SCH/ref=sr_1_1?_encoding=UTF8&keywords=Effective+Java&qid=1649185785&s=digital-text&sr=1-1) in item 19.
+
+```java
+/*
+* This class declaration will throw a compilation error as class "Address"
+* is declared as final and other classes cannot inherit from it
+*/
+public class AddressExtension extends Address {
+    // content omitted for brevity
+}
+```
+
+---
+
+# Final variables
+
+<hr />
+
+A variable that's declared as `final` can be instantiated only once:
+
+* In a constructor if this is a field in a class
+* At the time of declaration if this is a field in a class or a variable
+* Fields declared as `final` and instantiated in constructor cannot be changed through setters (!)
+
+A variable that has been declared as `final` and has been inialized **cannot** have this reference changed.
+
+The content of an instance that's referenced by a `final` variable **can** change.
+
+```java
+private final Hotel boringHotel =
+    new Hotel("My Boring hotel", Address.defaultAddress());
+
+/*
+* When trying to make a boring hotel awesome, will throw a compilation error as variable 
+* "boringHotel" cannot be re-assigned
+*/
+boringHotel = new Hotel("My Awesome hotel", Address.defaultAddress());
+```
+
+---
+
+# Unmodifiable collections
+
+<hr />
+
+For a long time, Java had (and still has) mutable collections.
+
+Recently there was a shift to introduce _immutable_ collections and then they were renamed to be _unmodifiable_.
+
+```java
+// elements of an unmodifiable collection cannot be changed
+List<String> someList = Collections.unmodifiableList(List.of("Mom"));
+// this operation will throw an "UnsupportedOperationException"
+someList.set(0, "Dad");
+// this operation is allowed
+someList = Collections.unmodifiableList(List.of("Dad"));
+```
+
+---
+
+# Immutable reference to an unmodifiable collection
+
+<hr />
+
+A final reference to an unmodifiable collection cannot be changed
+
+```java
+// elements of an unmodifiable collection cannot be changed
+public static String someMethod() {
+    
+    final List<String> someList = Collections.unmodifiableList(List.of("Mom"));
+
+    /* 
+    * this operation is will throw an error: 
+    * cannot assign a value to final variable someList
+    */
+    someList = Collections.unmodifiableList(List.of("Dad"));
+
+    return someList.get(0);
+}
+```
+
+---
+
+# Java Records
+
+<hr />
+
+Java Records made it through in Java and they are supposed to reduce a lot of boilerplate code.
+
+They provide an object with:
+
+* getters
+* toString()
+* hashCode() and equals()
+* A public constructor with all class fields
+
+Some might argue that this functionality can be accomplished by using Lombok, or, on a more drastic note, by switching to Kotlin. I would agree that Java needs to evolve, and this a sign that things are getting better.
+
+I will focus only on the advantages brought for immutability: no `setters` on an object
+
+```java
+public Record Hotel(String name, Address address){}
+```
+
+How simple is that?
