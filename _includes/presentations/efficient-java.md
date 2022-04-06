@@ -299,3 +299,22 @@ public Record Hotel(String name, Address address){}
 ```
 
 How simple is that?
+
+---
+
+# What is a Record under the hoods?
+
+<hr />
+
+For those interested in what the compiler does on a Record, run the following command in your terminal:
+
+```sh
+echo "public record Address(String city, String street){}" >> Address.java && javac Address.java && javap -c Address.class
+```
+
+In your terminal you should see compiler's magic:
+
+* final class that extends `java.lang.Record`
+* getter methods
+* toString(), equals() and hashCode()
+* a public constructor with two String arguments
