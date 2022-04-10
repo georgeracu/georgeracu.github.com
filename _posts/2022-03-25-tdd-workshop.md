@@ -1,7 +1,7 @@
 ---
 layout: presentation
 title: TDD Workshop Presentation
-permalink: /tdd-workshop-presentation/
+permalink: /presentations/tdd-workshop-presentation/
 tags: [tdd, test driven development, testing]
 description: Test Driven Development (TDD) workshop with introduction to TDD and practical exercise
 ---
