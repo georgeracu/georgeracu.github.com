@@ -27,6 +27,7 @@ And done, we have an SQLite3 server ready to serve our needs.
 ``` bash
 sqlite3 raw_events.db
 create table events (id integer, body text, date_received text, ip_address text, sensor_id text);
+insert into events values()
 ```
 
 ## Drawbacks of SQLite3
