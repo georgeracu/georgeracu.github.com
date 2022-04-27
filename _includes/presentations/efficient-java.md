@@ -19,7 +19,20 @@ By better code I mean a few things:
 
 ---
 
-# Immutable Java
+# Immutable Java - why?
+
+<hr/>
+
+Why do we want immutable objects?
+
+* Avoid side effects on long-lived objects
+* Shorter object life span means fewer places where state can change
+* Guaranteed thread safety (we don't know how our objects are being used by other classes)
+* The flow of data is simplified (no public methods to change internal state after object creation)
+
+---
+
+# Immutable Java - how?
 
 <hr/>
 
