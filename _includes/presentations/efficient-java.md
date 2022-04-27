@@ -78,15 +78,21 @@ public class Hotel {
 
 ---
 
-# How to change object `hotel`
+# How to "change" object `hotel`
 
 <hr/>
 
 Java is renowned for verbosity and not loved by many for the same reason
 
-There is no easy way to change an `immutable object`
+Impossible to change an `immutable object` (**reflection** not considered here), therefore we create a new one
 
 [Lombok](https://projectlombok.org/) to the rescue with `@Builder`
+
+Creating new objects is cheap
+
+The Garbage Collector (GC) works great to cleanup short lived objects
+
+Very little extra resource utilization
 
 `Example`
 
@@ -107,7 +113,9 @@ public class Hotel {
 
 <hr/>
 
-Assuming that we need to change a hotel's address, we can do the following
+Changing internal state of an immutable object is impossible
+
+Assuming that we need to change a hotel's address, we need to create a new `Hotel` object with the new address and all other fields of the existing one that we are updating
 
 ```java
  
@@ -318,3 +326,15 @@ In your terminal you should see compiler's magic:
 * getter methods
 * toString(), equals() and hashCode()
 * a public constructor with two String arguments
+
+---
+
+# Multi-threading and immutable objects
+
+<hr/>
+
+Think about the foolowing piece of code:
+
+```java
+
+```
