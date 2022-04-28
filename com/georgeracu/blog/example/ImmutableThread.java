@@ -1,8 +1,12 @@
 package com.georgeracu.blog.example;
 
+import java.util.Collections;
+import java.util.List;
+
 public final class ImmutableThread {
     public static void main(String args[]) {
-        MutabilityTest.shouldAddNumbers();
+        // MutabilityTest.shouldAddNumbers();
+        MutabilityTest.unmodifiableCollectionTest();
     }
 
     private static void runMutableMethod() {
@@ -93,6 +97,15 @@ final class MutabilityTest {
         if (expectedValue != actualValue) {
             throw new RuntimeException(
                     "Expected value " + expectedValue + " is different from the actual value " + actualValue);
+        }
+    }
+
+    public static void unmodifiableCollectionTest() {
+        final MutableObject mutableObject = new MutableObject(5);
+        final List<MutableObject> objects = Collections.unmodifiableList(List.of(mutableObject));
+        objects.get(0).addValue(5);
+        if (objects.get(0).getValue() != 5) {
+            throw new RuntimeException("Object has been changed!");
         }
     }
 }

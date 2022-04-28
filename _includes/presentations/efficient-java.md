@@ -5,12 +5,6 @@
 
 #### Writing better code in Java
 
----
-
-# What is better?
-
-<hr />
-
 By better code I mean a few things:
 
 * Immutability
@@ -25,10 +19,12 @@ By better code I mean a few things:
 
 Why do we want immutable objects?
 
-* Avoid side effects on long-lived objects
+* Avoid side effects on long-lived objects (invisible state changes)
 * Shorter object life span means fewer places where state can change
 * Guaranteed thread safety (we don't know how our objects are being used by other classes)
 * The flow of data is simplified (no public methods to change internal state after object creation)
+* Functional programming relies on many mathematical concepts, and one of them is that operands don't change value
+* Easier to debug and trace changes
 
 ---
 
@@ -47,6 +43,8 @@ To have truly immutable code, we need to use all above, together.
 
 Any non-immutable or non-modifiable object will make our life harder.
 
+Java started with few immutable classes, like `String` and started adding more in newer JDK releases: `BigInteger` etc.
+
 ---
 
 # Immutable Objects
@@ -59,7 +57,8 @@ Easy to accomplish following a few simple rules:
 * No setters on objects
 * No void methods with side effects (changing value for a field)
 * Field instantiation only through constructors
-* No use of reflection to change private fields
+* No use of reflection to change object fields
+* Defensive copies
 
 ---
 
@@ -80,7 +79,7 @@ public class Hotel {
 
     public Hotel(final String name, final Address address) {
         this.name = name;
-        this.hotel = hotel;
+        this.address = address;
     }
 
     public String getName() { return this.name; }
@@ -91,7 +90,7 @@ public class Hotel {
 
 ---
 
-# How to "change" object `hotel`
+# How to "change" an immutable object
 
 <hr/>
 
@@ -99,13 +98,17 @@ Java is renowned for verbosity and not loved by many for the same reason
 
 Impossible to change an `immutable object` (**reflection** not considered here), therefore we create a new one
 
-[Lombok](https://projectlombok.org/) to the rescue with `@Builder`
+[Lombok](https://projectlombok.org/) to the rescue with `@Builder` annotation so we avoid verbosity
 
-Creating new objects is cheap
+Creating new objects is cheap in resource consumption (for our use case)
 
 The Garbage Collector (GC) works great to cleanup short lived objects
 
-Very little extra resource utilization
+Very little extra resource utilization for having more objects
+
+Large and very large objects should be carefully designed
+
+Code structures generating many objects (loops, recursion etc.) can use many resources
 
 `Example`
 
@@ -259,12 +262,12 @@ boringHotel = new Hotel("My Awesome hotel", Address.defaultAddress());
 
 <hr />
 
-For a long time, Java had (and still has) mutable collections.
-
-Recently there was a shift to introduce _immutable_ collections and then they were renamed to be _unmodifiable_.
+* For a long time, Java had (and still has) mutable collections
+* Recently there was a shift to introduce _immutable_ collections and then they were renamed to be _unmodifiable_
+* Unmodifiable collections cannot have their elements removed, added or replaced
+* Elements of unmodifiable collections can have their internal state changed
 
 ```java
-// elements of an unmodifiable collection cannot be changed
 List<String> someList = Collections.unmodifiableList(List.of("Mom"));
 // this operation will throw an "UnsupportedOperationException"
 someList.set(0, "Dad");
@@ -278,7 +281,9 @@ someList = Collections.unmodifiableList(List.of("Dad"));
 
 <hr />
 
-A final reference to an unmodifiable collection cannot be changed
+* A final reference to an unmodifiable collection cannot be changed
+* An unmodifiable collection cannot be modified
+* Objects inside an unmodifiable collection can be changed, if they are not immutable
 
 ```java
 // elements of an unmodifiable collection cannot be changed
@@ -342,12 +347,22 @@ In your terminal you should see compiler's magic:
 
 ---
 
-# Multi-threading and immutable objects
+# Defensive copies
 
 <hr/>
 
-Think about the foolowing piece of code:
+* Do not provide direct access to mutable fields via accessors
+* Use defensive copies in field instantiation: constructors
 
-```java
+_WIP_
 
-```
+---
+
+# References
+
+<hr/>
+
+* [Effective Java, 3rd edition](https://www.amazon.co.uk/Effective-Java-Joshua-Bloch-ebook/dp/B078H61SCH/ref=sr_1_1?_encoding=UTF8&keywords=Effective+Java&qid=1649185785&s=digital-text&sr=1-1)
+* [Java Concurreny in Practice](https://jcip.net/)
+* [Functional Programming for Java Developers](https://www.oreilly.com/library/view/functional-programming-for/9781449312657/)
+* [Functional Programming in Java](https://www.manning.com/books/functional-programming-in-java)
