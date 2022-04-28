@@ -110,6 +110,12 @@ Large and very large objects should be carefully designed
 
 Code structures generating many objects (loops, recursion etc.) can use many resources
 
+---
+
+# Using Lombok's builder
+
+<hr/>
+
 `Example`
 
 ```java
@@ -277,7 +283,7 @@ someList = Collections.unmodifiableList(List.of("Dad"));
 
 ---
 
-# Immutable reference to an unmodifiable collection
+# Reference an unmodifiable collection
 
 <hr />
 
