@@ -72,7 +72,7 @@ Easy to accomplish following a few simple rules:
 `Example`
 
 ```java
-public class Hotel {
+public final class Hotel {
 
     private final String name;
     private final Address address;
@@ -90,7 +90,7 @@ public class Hotel {
 
 ---
 
-# How to "change" an immutable object
+# Immutable objects and resources
 
 <hr/>
 
@@ -98,7 +98,7 @@ Java is renowned for verbosity and not loved by many for the same reason
 
 Impossible to change an `immutable object` (**reflection** not considered here), therefore we create a new one
 
-[Lombok](https://projectlombok.org/) to the rescue with `@Builder` annotation so we avoid verbosity
+[Lombok](https://projectlombok.org/) to the rescue with `@Builder` annotation
 
 Creating new objects is cheap in resource consumption (for our use case)
 
@@ -140,7 +140,6 @@ Changing internal state of an immutable object is impossible
 Assuming that we need to change a hotel's address, we need to create a new `Hotel` object with the new address and all other fields of the existing one that we are updating
 
 ```java
- 
 private final Hotel awesomeHotel = 
     new Hotel("My Awesome hotel", Address.defaultAddress());
 
@@ -154,7 +153,6 @@ private final Address newAddress =
     new Address("ugly city", "ugly street");
 
 private final Hotel uglyHotel = moveAddress(awesomeHotel, newAddress);
-
 ```
 
 ---

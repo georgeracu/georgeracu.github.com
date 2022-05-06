@@ -19,7 +19,7 @@ Java has a few primitive types that are used everywhere to hold values.
 
 While holding value is a good thing, having meaningful domain concepts around these values is not that easy.
 
-Take for example a vehicle Vehicle Identification Number [VIN](https://en.wikipedia.org/wiki/Vehicle_identification_number).
+Take for example a vehicle's Vehicle Identification Number [VIN](https://en.wikipedia.org/wiki/Vehicle_identification_number).
 
 Consider the following simplistic example to add validation at construction time
 
@@ -58,7 +58,7 @@ public class VinValidator {
 
 Can you see any issues there?
 
-One might say that we can put VIN validation inside the Vehicle class and we keep data and behavior together.
+One might say that we can put VIN validation inside the Vehicle class, and we keep data and behavior together.
 
 ---
 
@@ -69,7 +69,7 @@ One might say that we can put VIN validation inside the Vehicle class and we kee
 Consider the following:
 
 * The vehicle will get more fields
-* VIN validation will to add more conditions
+* VIN validation needs to add more conditions
 * VIN follows ISO 3779 standard and its components have meaning
 * What if we want to make VIN object "smarter"? Eg. tell us country, manufacturer etc.
 
@@ -87,26 +87,39 @@ Consider this code snippet
 
 ```java
 public record VehicleIdentificationNumber(String value) {
+    
+    private static final int VALUE_LENGTH = 17;
+    
     public VehicleIdentificationNumber(final String value) {
         validateLengthOrThrow(value);
         this.value = value;
     }
 
     private void validateLengthOrThrow(final String input) {
-        if (input != null && input.length() != 17) {
-            throw new InvalidVINException("VIN length should be 17 characters");
+        if (input != null && input.length() != VALUE_LENGTH) {
+            throw new InvalidVINException("VIN length should be ".concat(VALUE_LENGTH));
         }
     }
 }
-
-public record Vehicle(VehicleIdentificationNumber vin) {}
-public record ServiceRecord(VehicleIdentificationNumber vin, UUID customerId) {}
 ```
+
+---
+
+# Merging data and logic
+
+<hr />
 
 * We added validation in the same place with the data that's validating
 * We are consistent in throwing the same error at initialization time
 * We encapsulated properties related to a VIN inside that object
 
+Using the new VIN object in other places
+
+```java
+public record Vehicle(VehicleIdentificationNumber vin) {}
+
+public record ServiceRecord(Vehicle vehicle, UUID customerId) {}
+```
 ---
 
 # Evolving VIN
@@ -119,18 +132,46 @@ Given that we respect a standard in our VIN record, let's get the WMI (World Man
 public record VehicleIdentificationNumber(String value) {
     // previous code omitted for brevity
 
-    public String getWorldManufacturerIdentifier() {
+    public String worldManufacturerIdentifier() {
         return value().substring(0,3);
     }
 }
 ```
 
-Because we validated when we built the record we know that we will always have a value with a non-null value, with 17 characters.
+Validated when we built the record, we know that there will always be a value with a non-null value, with 17 characters.
+
+---
+
+# Object-Oriented Design
+
+<hr />
+
+### Keep data and process together
+
+* [Anemic Domain Model](https://www.martinfowler.com/bliki/AnemicDomainModel.html) is an anti-pattern
+* Bags of getters and setters without any behaviour
+* Domain behaviour scattered around in service objects
+* Domain objects are different from Entity Objects (bags of data)
+
+---
+
+# Equality for Value Objects
+
+<hr />
+
+* Value objects should have `equals()` and `hashCode()` implemented
+* Value objects compare by the value they hold
+* Equality is computed against the value held and not against instance
+* Two objects holding the same value are said to be same
+* Java Records implement `equals()` and `hashCode()` for us
 
 ---
 
 # References
 
-< hr/>
+<hr />
 
-[Martin Fowler](https://www.martinfowler.com/bliki/ValueObject.html) dedicated an entire post for Value Objects, mostly talking about them being implemented in JavaScript.
+* [Martin Fowler](https://www.martinfowler.com/bliki/ValueObject.html) dedicated an entire post for Value Objects, mostly talking about them being implemented in JavaScript
+* [Anemic Domain Model](https://www.martinfowler.com/bliki/AnemicDomainModel.html)
+* [Patterns of Enterprise Application Architecture, 2002](https://martinfowler.com/books/eaa.html)
+* [A different point of view that ADM is not an anti-pattern](https://blog.inf.ed.ac.uk/sapm/2014/02/04/the-anaemic-domain-model-is-no-anti-pattern-its-a-solid-design/)

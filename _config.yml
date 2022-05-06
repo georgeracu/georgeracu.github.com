@@ -5,12 +5,12 @@ description: "George Racu's personal page."
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://georgeracu.github.io" # the base hostname & protocol for your site
 twitter_username: georgeracu
-github_username:  georgeracu
+github_username: georgeracu
 google_analytics: UA-53216185-7
 
-theme: minima
-minima:
-  skin: dark
+# theme: minima
+# minima:
+# skin: dark
 
 # Build settings
 markdown: kramdown
