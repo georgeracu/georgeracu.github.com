@@ -311,7 +311,7 @@ public static String someMethod() {
 
 <hr />
 
-Java Records made it through in Java and they are supposed to reduce a lot of boilerplate code.
+Java Records made it through in Java and they are supposed to reduce a lot of the boilerplate code.
 
 They provide an object with:
 
@@ -320,7 +320,7 @@ They provide an object with:
 * hashCode() and equals()
 * A public constructor with all class fields
 
-Some might argue that this functionality can be accomplished by using Lombok, or, on a more drastic note, by switching to Kotlin. I would agree that Java needs to evolve, and this a sign that things are getting better.
+Some might argue that this functionality can be accomplished by using [Lombok](https://projectlombok.org/), or, on a more drastic note, by switching to [Kotlin](https://kotlinlang.org/). I would agree that Java needs to evolve, and this a sign that things are getting better.
 
 I will focus only on the advantages brought for immutability: no `setters` on an object
 
@@ -351,6 +351,26 @@ In your terminal you should see compiler's magic:
 
 ---
 
+# Combining Records with Builder pattern
+
+When using immutable objects it becomes pretty hard to change a field and to create a new object with the rest of the fields having the same values. The [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern) can be used by using [Lombok](https://projectlombok.org/)'s annotation `@Builder(toBuilder=true)`.
+
+```java
+public Record Hotel(String name, Address address){
+    @Builder(toBuilder=true)
+    public Hotel() {
+        // constructor required for @Builder annotation
+    }
+}
+
+// usage
+
+var myHotel = new Hotel("Awesome Hotel", new Address());
+var renamedHotel = myHotel.toBuilder.name("Marvelous Hotel").build();
+```
+
+---
+
 # Defensive copies
 
 <hr/>
@@ -367,6 +387,7 @@ _WIP_
 <hr/>
 
 * [Effective Java, 3rd edition](https://www.amazon.co.uk/Effective-Java-Joshua-Bloch-ebook/dp/B078H61SCH/ref=sr_1_1?_encoding=UTF8&keywords=Effective+Java&qid=1649185785&s=digital-text&sr=1-1)
-* [Java Concurreny in Practice](https://jcip.net/)
+* [Java Concurrency in Practice](https://jcip.net/)
 * [Functional Programming for Java Developers](https://www.oreilly.com/library/view/functional-programming-for/9781449312657/)
 * [Functional Programming in Java](https://www.manning.com/books/functional-programming-in-java)
+* [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/)
