@@ -15,7 +15,15 @@
 
 <hr/>
 
-![image](./../../assets/img/presentation/microservice-architecture.png)
+![high-level-view](./../../assets/img/presentation/microservice-layered-high-level.png)
+
+---
+
+# Layered Architecture - detailed view
+
+<hr/>
+
+![detailed-view](./../../assets/img/presentation/microservice-architecture.png)
 
 [Image source](https://martinfowler.com/articles/microservice-testing/#anatomy-connections)
 
