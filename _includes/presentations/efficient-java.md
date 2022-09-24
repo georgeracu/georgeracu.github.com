@@ -245,7 +245,7 @@ A variable that's declared as `final` can be instantiated only once:
 * At the time of declaration if this is a field in a class or a variable
 * Fields declared as `final` and instantiated in constructor cannot be changed through setters (!)
 
-A variable that has been declared as `final` and has been inialized **cannot** have this reference changed.
+A variable that has been declared as `final` and has been instantiated **cannot** have this reference changed.
 
 The content of an instance that's referenced by a `final` variable **can** change.
 
@@ -273,8 +273,10 @@ boringHotel = new Hotel("My Awesome hotel", Address.defaultAddress());
 
 ```java
 List<String> someList = Collections.unmodifiableList(List.of("Mom"));
+
 // this operation will throw an "UnsupportedOperationException"
 someList.set(0, "Dad");
+
 // this operation is allowed
 someList = Collections.unmodifiableList(List.of("Dad"));
 ```
@@ -285,7 +287,7 @@ someList = Collections.unmodifiableList(List.of("Dad"));
 
 <hr />
 
-* A final reference to an unmodifiable collection cannot be changed
+* A *final* reference to an unmodifiable collection cannot be changed
 * An unmodifiable collection cannot be modified
 * Objects inside an unmodifiable collection can be changed, if they are not immutable
 
@@ -311,18 +313,18 @@ public static String someMethod() {
 
 <hr />
 
-Java Records made it through in Java and they are supposed to reduce a lot of the boilerplate code.
+Java Records made it through in Java after long time and they are supposed to reduce a lot of the boilerplate code.
 
-They provide an object with:
+A Java Record provides:
 
-* getters
-* toString()
-* hashCode() and equals()
-* A public constructor with all class fields
+* `getters`
+* `toString()`
+* `hashCode()` and `equals()`
+* A public constructor with all fields
 
 Some might argue that this functionality can be accomplished by using [Lombok](https://projectlombok.org/), or, on a more drastic note, by switching to [Kotlin](https://kotlinlang.org/). I would agree that Java needs to evolve, and this a sign that things are getting better.
 
-I will focus only on the advantages brought for immutability: no `setters` on an object
+Let's focus on the advantages brought for immutability: no `setters` on an object
 
 ```java
 public Record Hotel(String name, Address address){}
@@ -346,7 +348,7 @@ In your terminal you should see compiler's magic:
 
 * final class that extends `java.lang.Record`
 * getter methods
-* toString(), equals() and hashCode()
+* `toString()`, `equals()` and `hashCode()`
 * a public constructor with two String arguments
 
 ---
@@ -356,7 +358,8 @@ In your terminal you should see compiler's magic:
 When using immutable objects it becomes pretty hard to change a field and to create a new object with the rest of the fields having the same values. The [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern) can be used by using [Lombok](https://projectlombok.org/)'s annotation `@Builder(toBuilder=true)`.
 
 ```java
-public Record Hotel(String name, Address address){
+public Record Hotel(String name, Address address) {
+
     @Builder(toBuilder=true)
     public Hotel() {
         // constructor required for @Builder annotation
@@ -379,6 +382,15 @@ var renamedHotel = myHotel.toBuilder.name("Marvelous Hotel").build();
 * Use defensive copies in field instantiation: constructors
 
 _WIP_
+
+---
+
+# Builder Pattern
+
+<hr/>
+
+* Used when dealing with many constructor arguments
+* Used especially when not using value objects and dealing with many primitives
 
 ---
 
