@@ -247,7 +247,7 @@ public interface RoomsRepository extends JpaRepository<RoomEntity, UUID> {
 
 ---
 
-# Persistence Layer Test - setup
+# Persistence Test - setup
 
 <hr/>
 
@@ -275,7 +275,6 @@ class RoomsRepositoryIT {
         assertThat(roomsRepository).isNotNull();
         this.roomsRepository.deleteAll();
     }
-    // test bellow due to space issue
 }
 ```
 
@@ -311,12 +310,15 @@ class RoomsRepositoryIT {
 
 ---
 
-# Explaining the Persistence Layer test
+# Explaining the Persistence test
 
 <hr/>
 
+* The purpose of this test is to make sure that our repository will perform an interaction with a database, when connected to one
+* Out of scope are testing all the methods that the repository exposes, they have been tested already in the framework
+* We should test any custom logic that we are building
 * Setup using [TestContainers](https://www.testcontainers.org/)
-* Autowire the repository only
+* Autowire only the repository
 * Replace DB connection details with the ones from the Docker container
 * Make sure that the repository is instantiated
 * Test that the persisted object will receive an ID from the DB (confirmation that persistence was OK)
@@ -327,15 +329,38 @@ class RoomsRepositoryIT {
 
 <hr/>
 
-When translating from one object to another, there's good practice for having mapper objects. Main characteristics:
+When translating from one object to another, there's a good practice for having object mappers. Main characteristics:
 
-* Static classes with static methods
-* Keep any validation for the target object in one place
+* Static final classes with static methods
+* Keeps any validation for the target object in one place
 * Easy to unit test
 
 ---
 
 # Example of an object mapper
+
+<hr/>
+
+```java
+public final class RoomEntityToRoom {
+
+    private RoomEntityToRoom() {
+        // nothing to see here
+    }
+
+    public static Room map(final RoomEntity entity) {
+        return Optional.ofNullable(entity)
+                .map(source -> Room.builder()
+                        .name(source.getName())
+                        .build())
+                .orElseThrow(() -> new NullPointerException("Source object cannot be null"));
+    }
+}
+```
+
+---
+
+# Example of a test for an object mapper
 
 <hr/>
 
@@ -364,3 +389,28 @@ class RoomEntityToRoomTest {
     }
 }
 ```
+
+---
+
+# Testing a HTTP Client
+
+<hr/>
+
+* Calling downstream services via HTTP might require wrapping the API into some sort of client
+* When calling external services, it requires to use a retry strategy and a circuit breaker (at least)
+* The configuration for the circuit breaker and retries require some annotation magic
+* While a unit test might be enough to test the client, it requires the application context for the annotations to work
+* The following example uses [Resilience4J](https://resilience4j.readme.io/docs) to configure a client
+* This is heavier test than usual, I haven't found a way to avoid wiring (mostly) the entire application 
+
+---
+
+# Example of a HTTP Client
+
+<hr/>
+
+* [HttpClientImpl.java](https://github.com/georgeracu/spring-boot-demo-app/blob/main/src/main/java/com/georgeracu/demo/springboot/adapter/out/HttpClientImpl.java)
+* [HttpClientImplTest](https://github.com/georgeracu/spring-boot-demo-app/blob/main/src/test/java/com/georgeracu/demo/springboot/adapter/out/HttpClientImplTest.java)
+* [Resilience4J configuration](https://github.com/georgeracu/spring-boot-demo-app/blob/main/src/main/resources/application.yaml)
+
+---
