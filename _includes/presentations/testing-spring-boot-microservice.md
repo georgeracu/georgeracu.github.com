@@ -12,6 +12,30 @@
 
 ---
 
+## Why this session?
+
+<hr/>
+
+### From Anti-Pattern
+
+![From anti-pattern](./../../assets/img/presentation/blg_inline_introducing_software_testing_cupcake_anti_pattern.png)
+
+[Source for image](https://www.thoughtworks.com/en-de/insights/blog/introducing-software-testing-cupcake-anti-pattern)
+
+---
+
+## Why this session?
+
+<hr/>
+
+### To Best Practices
+
+![To best practices](./../../assets/img/presentation/blg_inline_introducing_software_testing_cupcake_anti_pattern_01.png)
+
+[Source for image](https://www.thoughtworks.com/en-de/insights/blog/introducing-software-testing-cupcake-anti-pattern)
+
+---
+
 ## Layered Architecture
 
 <hr/>
