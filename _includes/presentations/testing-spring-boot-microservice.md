@@ -1,5 +1,6 @@
 
-# Testing Spring Boot Microservices
+# Testing 
+# Microservices
 
 <hr/>
 
@@ -11,7 +12,7 @@
 
 ---
 
-# Layered Architecture
+## Layered Architecture
 
 <hr/>
 
@@ -19,7 +20,7 @@
 
 ---
 
-# Layered Architecture - detailed view
+## Layered Architecture - detailed view
 
 <hr/>
 
@@ -29,7 +30,7 @@
 
 ---
 
-# General Rules
+## General guidance
 
 <hr/>
 
@@ -43,7 +44,7 @@
 
 ---
 
-# REST Controllers
+## REST Controllers
 
 <hr/>
 
@@ -60,7 +61,7 @@
 
 ---
 
-# Example of a REST Controller
+## A REST Controller
 
 <hr/>
 
@@ -86,7 +87,7 @@ public class RoomsController {
 
 ---
 
-# How to test REST Controllers
+## Testing REST Controllers
 
 <hr/>
 
@@ -107,7 +108,7 @@ Advantages:
 
 ---
 
-# Example using `@WebMvcTest`
+## Example using `@WebMvcTest` - 1
 
 <hr/>
 
@@ -140,7 +141,7 @@ class RoomsControllerIT {
 
 ---
 
-# Example using `@WebMvcTest` - authentication
+## Example using `@WebMvcTest` - 2
 
 <hr/>
 
@@ -168,7 +169,7 @@ class RoomsControllerIT {
 
 ---
 
-# Service Layer
+## Service Layer
 
 <hr/>
 
@@ -199,7 +200,7 @@ public class GetRoomsUseCaseImpl implements GetRoomsUseCase {
 
 ---
 
-# Example Service Test
+## Example Service Test
 
 <hr/>
 
@@ -231,7 +232,7 @@ class GetRoomsUseCaseTest {
 
 ---
 
-# Persistence Layer
+## Persistence Layer
 
 <hr/>
 
@@ -247,7 +248,7 @@ public interface RoomsRepository extends JpaRepository<RoomEntity, UUID> {
 
 ---
 
-# Persistence Test - setup
+## Persistence Test - setup
 
 <hr/>
 
@@ -280,7 +281,7 @@ class RoomsRepositoryIT {
 
 ---
 
-# Persistence Layer Test
+## Persistence Layer Test - 1
 
 <hr/>
 
@@ -310,7 +311,7 @@ class RoomsRepositoryIT {
 
 ---
 
-# Explaining the Persistence test
+## Persistence Layer Test - 2
 
 <hr/>
 
@@ -325,7 +326,7 @@ class RoomsRepositoryIT {
 
 ---
 
-# Object mappers
+## Object mappers
 
 <hr/>
 
@@ -337,7 +338,7 @@ When translating from one object to another, there's a good practice for having 
 
 ---
 
-# Example of an object mapper
+## Example of an object mapper
 
 <hr/>
 
@@ -360,7 +361,7 @@ public final class RoomEntityToRoom {
 
 ---
 
-# Example of a test for an object mapper
+## Testing an object mapper
 
 <hr/>
 
@@ -384,7 +385,7 @@ class RoomEntityToRoomTest {
         assertThat(actual)
                 .isNotNull()
                 .isPresent()
-                .get
+                .get()
                 .usingRecursiveComparison().isEqualTo(expected);
     }
 }
@@ -392,7 +393,7 @@ class RoomEntityToRoomTest {
 
 ---
 
-# Testing a HTTP Client
+## Testing a HTTP Client
 
 <hr/>
 
@@ -405,7 +406,7 @@ class RoomEntityToRoomTest {
 
 ---
 
-# Example of a HTTP Client
+## Example of a HTTP Client
 
 <hr/>
 
@@ -415,6 +416,8 @@ class RoomEntityToRoomTest {
 
 ---
 
-# Questions?
+## Questions?
 
-## Thank You :-)
+<hr/>
+
+### Thank You :-)
