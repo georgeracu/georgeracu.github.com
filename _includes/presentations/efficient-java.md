@@ -385,12 +385,67 @@ _WIP_
 
 ---
 
-# Builder Pattern
+## Builder Pattern
 
 <hr/>
 
 * Used when dealing with many constructor arguments
-* Used especially when not using value objects and dealing with many primitives
+* Used when not using value objects and dealing with many primitives
+
+---
+
+## An example of a builder
+
+<hr/>
+
+```java
+public final class Hotel {
+    private final String name;
+    private Hotel(final String name) {
+        this.name = name;
+    }
+    public static Builder builder() {
+        return new Builder();
+    }
+    public String getName() {
+        return name;
+    }
+    public static class Builder {
+        private String name;
+        public Builder name(final String name) {
+            this.name = name;
+            return this;
+        }
+        public Hotel build() {
+            return new Hotel(name);
+        }
+    }
+}
+```
+
+---
+
+## An example using Lombok
+
+<hr/>
+
+```java
+// as a class
+@Builder(toBuilder=true)
+public class Hotel {
+    private static final String name;
+    // The content of the class omitted for brevity
+}
+
+// as a record
+public Record Hotel(String name) {
+
+    @Builder(toBuilder=true)
+    public Hotel() {
+        // constructor required for @Builder annotation
+    }
+}
+```
 
 ---
 
@@ -403,3 +458,11 @@ _WIP_
 * [Functional Programming for Java Developers](https://www.oreilly.com/library/view/functional-programming-for/9781449312657/)
 * [Functional Programming in Java](https://www.manning.com/books/functional-programming-in-java)
 * [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/)
+
+---
+
+## Questions?
+
+<hr/>
+
+### Thank You :-)
