@@ -47,4 +47,4 @@
 
 <hr/>
 
-* Usually to handle `null` values in Java, one would do
+* Usually, to handle `null` values in Java, one would do {% gist ffd37282cd63f58cf9edd5411a916d99 %}
