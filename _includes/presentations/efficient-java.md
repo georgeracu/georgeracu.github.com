@@ -23,7 +23,10 @@ Why do we want immutable objects?
 * Shorter object life span means fewer places where state can change
 * Guaranteed thread safety (we don't know how our objects are being used by other classes)
 * The flow of data is simplified (no public methods to change internal state after object creation)
-* Functional programming relies on many mathematical concepts, and one of them is that operands don't change value
+* Functional programming relies on many mathematical concepts, and one of them is that operands don't change values
+
+`2 + 3 = 5 -> 5 is a new value, 2 and 3 are still the same`
+
 * Easier to debug and trace changes
 
 ---
@@ -39,11 +42,11 @@ We can express immutability through a few methods:
 * Immutable collections (still an object)
 * Records
 
-To have truly immutable code, we need to use all above, together.
+To have truly immutable code, we need to use all of above, together.
 
 Any non-immutable or non-modifiable object will make our life harder.
 
-Java started with few immutable classes, like `String` and started adding more in newer JDK releases: `BigInteger` etc.
+Java started with a few immutable classes, like `String` and started adding more in newer JDK releases: `BigInteger` etc.
 
 ---
 
@@ -58,7 +61,7 @@ Easy to accomplish following a few simple rules:
 * No void methods with side effects (changing value for a field)
 * Field instantiation only through constructors
 * No use of reflection to change object fields
-* Defensive copies
+* Use defensive copies
 
 ---
 
@@ -94,21 +97,21 @@ public final class Hotel {
 
 <hr/>
 
-Java is renowned for verbosity and not loved by many for the same reason
+* Java is renowned for verbosity and not loved by many for the same reason
 
-Impossible to change an `immutable object` (**reflection** not considered here), therefore we create a new one
+* Impossible to change an `immutable object` (**reflection** not considered here), therefore we create a new one
 
-[Lombok](https://projectlombok.org/) to the rescue with `@Builder` annotation
+* [Lombok](https://projectlombok.org/) to the rescue with `@Builder` annotation
 
-Creating new objects is cheap in resource consumption (for our use case)
+* Creating new objects is cheap in resource consumption (for our use case)
 
-The Garbage Collector (GC) works great to cleanup short lived objects
+* The Garbage Collector (GC) works great to cleanup short lived objects (they don't leave eden space)
 
-Very little extra resource utilization for having more objects
+* Very little extra resource utilization for having more objects
 
-Large and very large objects should be carefully designed
+* Large and very large objects should be carefully designed
 
-Code structures generating many objects (loops, recursion etc.) can use many resources
+* Code structures generating many objects (loops, recursion etc.) can use many resources
 
 ---
 
@@ -209,6 +212,8 @@ This behaviour can be fixed if we make all objects immutable.
 
 To fix our example, we need to remove all setters from class `Address`.
 
+Think about searching for all places that are referencing a variable to understand where it was changed
+
 ---
 
 # Final classes
@@ -219,9 +224,9 @@ A class that's declared as `final` has an important message to send: `not open f
 
 In previous examples all classes are marked with `final`.
 
-By default, classes should be final.
+By default, classes should be final (Kotlin got the point).
 
-When we intend to let classes open for inheritance, we should document it. Joshua Bloch explains this term very well in his excellent book [Effective Java, 3rd edition](https://www.amazon.co.uk/Effective-Java-Joshua-Bloch-ebook/dp/B078H61SCH/ref=sr_1_1?_encoding=UTF8&keywords=Effective+Java&qid=1649185785&s=digital-text&sr=1-1) in item 19.
+When we intend to let classes open for inheritance, we should document it. Joshua Bloch explains this term very well in his excellent book [Effective Java, 3rd edition](https://www.amazon.co.uk/Effective-Java-Joshua-Bloch-ebook/dp/B078H61SCH/ref=sr_1_1?_encoding=UTF8&keywords=Effective+Java&qid=1649185785&s=digital-text&sr=1-1), item 19.
 
 ```java
 /*
@@ -313,7 +318,7 @@ public static String someMethod() {
 
 <hr />
 
-Java Records made it through in Java after long time and they are supposed to reduce a lot of the boilerplate code.
+Java Records made it to Java after a long time and they are supposed to reduce a lot of the boilerplate code.
 
 A Java Record provides:
 
@@ -322,7 +327,7 @@ A Java Record provides:
 * `hashCode()` and `equals()`
 * A public constructor with all fields
 
-Some might argue that this functionality can be accomplished by using [Lombok](https://projectlombok.org/), or, on a more drastic note, by switching to [Kotlin](https://kotlinlang.org/). I would agree that Java needs to evolve, and this a sign that things are getting better.
+Some might argue that this functionality can be accomplished by using [Lombok](https://projectlombok.org/), or, on a more drastic note, by switching to [Kotlin](https://kotlinlang.org/). I would agree that Java needs to evolve, and this is a sign that things are getting better.
 
 Let's focus on the advantages brought for immutability: no `setters` on an object
 
@@ -346,14 +351,14 @@ echo "public record Address(String city, String street){}" >> Address.java && ja
 
 In your terminal you should see compiler's magic:
 
-* final class that extends `java.lang.Record`
+* a final class that extends `java.lang.Record`
 * getter methods
 * `toString()`, `equals()` and `hashCode()`
 * a public constructor with two String arguments
 
 ---
 
-# Combining Records with Builder pattern
+## Combining Records with the Builder pattern
 
 When using immutable objects it becomes pretty hard to change a field and to create a new object with the rest of the fields having the same values. The [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern) can be used by using [Lombok](https://projectlombok.org/)'s annotation `@Builder(toBuilder=true)`.
 
@@ -385,12 +390,36 @@ _WIP_
 
 ---
 
-## Builder Pattern
+## The Builder Pattern
 
 <hr/>
 
 * Used when dealing with many constructor arguments
 * Used when not using value objects and dealing with many primitives
+
+```java
+@AllArgsConstructor
+public class Address {
+    private final String firstLine;
+    private final String secondLine;
+    private final String street;
+    private final String city;
+}
+
+var address = new Address("first line", "second line", "London Rd", "Colchester");
+var anotherAddress = new Address("first line", "second line", "Colchester", "London Rd");
+```
+
+* What's the problem here? What about an alternative?
+
+```java
+var address = Address.builder()
+                        .firstLine("first line")
+                        .secondLine("second line")
+                        .street("London Rd")
+                        .city("Colchester")
+                        .build();
+```
 
 ---
 
@@ -433,7 +462,7 @@ public final class Hotel {
 // as a class
 @Builder(toBuilder=true)
 public class Hotel {
-    private static final String name;
+    private final String name;
     // The content of the class omitted for brevity
 }
 

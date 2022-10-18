@@ -141,6 +141,8 @@ public static void handleStrings() {
 
 ## When not to use Optional
 
+### Method overloading
+
 <hr/>
 
 * When a parameter might be missing from a method: use method overloading
@@ -148,3 +150,11 @@ public static void handleStrings() {
 ```java
 
 ```
+
+---
+
+## When not to use Optional
+
+### When creating many objects in a short amount of time
+
+<hr/>
