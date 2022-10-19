@@ -123,7 +123,8 @@ public static Optional<String> maybeString() {
 }
 
 public static void handleStrings() {
-    if (null != mayNotReturnAString()) {
+    String needsNullCheck = mayNotReturnAString();
+    if (null != needsNullCheck)) {
         System.out.printf("No Optional value is not null: %s%n", needsNullCheck);
     } else {
         System.out.println("No Optional value is null");
