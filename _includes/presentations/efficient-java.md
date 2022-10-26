@@ -1,5 +1,5 @@
 
-# Efficient Java
+# Better Java
 
 <hr/>
 
@@ -10,6 +10,18 @@ By better code I mean a few things:
 * Immutability
 * Value objects
 * Builder pattern
+* How and when to use Optional
+* Simpler code
+
+---
+
+## Why this topic?
+
+<hr/>
+
+* We need to remember basics before doing advanced
+* Focus too much on the big picture
+* Simpler, safer code starts with basic stuff
 
 ---
 
