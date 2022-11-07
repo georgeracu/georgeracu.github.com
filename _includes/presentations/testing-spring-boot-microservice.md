@@ -1,10 +1,11 @@
 
-# Testing 
-# Microservices
+# Testing Microservices
 
 <hr/>
 
-* A classic layered architecture
+## Agenda
+
+* A classic layered architecture with Spring Boot
 * REST Controllers
 * Service Layer
 * Persistence Layer
@@ -40,7 +41,7 @@
 
 <hr/>
 
-![high-level-view](./../../assets/img/presentation/microservice-layered-high-level.png)
+![high-level-view](./../../assets/img/presentation/spring-boot-micro-service-layered-architecture.png)
 
 ---
 
@@ -58,13 +59,15 @@
 
 <hr/>
 
-* No field injection: all fields should be injected via constructor
-* No field value injection: all values should be injected via constructor
+* No field injection
+    * All fields should be injected via constructor
+    * Makes it easy to contruct objects with mocks
+    * Constructor field injection promotes immutability [Spring docs](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-basics)
 * Objects used in one layer should not be shared with other layers: REST, domain and persistence
-* Mappers should be used to translate between layers (and should be unit tested)
+* Mappers should be used to translate between layers (and should be unit tested!)
 * Request objects should not be reused as response objects at the REST layer
 * Fields should be final
-* Keep the number of fields low (max 5)
+* Keep the number of fields low (max 5), to avoid cognitive complexity
 
 ---
 
@@ -74,10 +77,12 @@
 
 * Defined using annotation `@RestController`
 * Contains annotations from several libraries for: 
-  * Payload validation
-  * Resource URL mapping
+  * Payload validation `@Valid`
+  * Resource URL mapping `@GetMapping`
   * Ocasional Lombok's `@RequiredArgsConstructor`
-  * Loggers
+  * Loggers `@Slf4j`
+  * Security `@RolesAllowed`
+  * etc.
 * Responsibilities: 
   * Mapping incoming requests to handler methods
   * Perform payload validation at the edge of the microservice
@@ -123,9 +128,9 @@ Spring Boot gives us the [`@WebMvcTest`](https://docs.spring.io/spring-boot/docs
 * Allows for mocking beans needed for running the tests
 * Allows for testing correct mapping for allowed roles
 * Allows for testing for error codes on invalid authentication/authorization scenarios
-* Work out of the box with JUnit 5
+* Works out of the box with JUnit 5
 
-Advantages:
+### Advantages:
 
 * A light-weight configuration compared to `@SpringBootTest`
 * Focuses only on testing the _Controller_ layer
