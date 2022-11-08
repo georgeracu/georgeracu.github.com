@@ -116,6 +116,22 @@ public class RoomsController {
 
 ---
 
+## REST Controller quick view
+
+<hr/>
+
+### Should test
+
+* Authorization
+* Payload for request/response
+* Handling of most common error cases: 400, 401, 403, 500
+* Expected methods are called on services
+* Mappings between web layer and service layer objects
+
+![web-layer-test](./../../assets/img/presentation/layered-arch/web-layer-test.png)
+
+---
+
 ## Testing REST Controllers
 
 <hr/>
@@ -229,6 +245,20 @@ public class GetRoomsUseCaseImpl implements GetRoomsUseCase {
 
 ---
 
+## Service layer quick view
+
+<hr/>
+
+### Should test
+
+* Logic inside services
+* Mappings between service layer and downstream layers: repository, messaging etc.
+* Expected methods are called on downstream layers
+
+![service-layer-test](./../../assets/img/presentation/layered-arch/service-layer-test.png)
+
+---
+
 ## Example Service Test
 
 <hr/>
@@ -274,6 +304,20 @@ Example of a Repository:
 public interface RoomsRepository extends JpaRepository<RoomEntity, UUID> {
 }
 ```
+
+---
+
+## Persistence layer quick view
+
+<hr/>
+
+### Should test
+
+* Any custom logic (custom queries)
+* Connectivity between repository and the database
+* Should not test default JPA queries, they are all tested already
+
+![persistence-layer-test](./../../assets/img/presentation/layered-arch/test-containers-test.png)
 
 ---
 
@@ -432,6 +476,21 @@ class RoomEntityToRoomTest {
 * While a unit test might be enough to test the client, it requires the application context for the annotations to work
 * The following example uses [Resilience4J](https://resilience4j.readme.io/docs) to configure a client
 * This is heavier test than usual, I haven't found a way to avoid wiring (mostly) the entire application 
+
+---
+
+## Http client quick view
+
+<hr/>
+
+### Should test
+
+* Mapping between the internal request objects and expected payload
+* Mapping between the response payload and internal objects
+* Handling of error cases: 400, 401, 403, 500 etc.
+* That the circuit breaker, retries etc. are picking-up configuration
+
+![http-client-test](./../../assets/img/presentation/layered-arch/http-client-test.png)
 
 ---
 
