@@ -30,7 +30,7 @@ The agenda is structured for a session that lasts for 4 hours, with a lunch brea
     * Mentor other developers
     * Try new languages and paradigms
 * Topic: Reduce the Cost of Change in our code
-* Topic: Four Rules of Simple Design
+* Topic: [Four Rules of Simple Design](https://www.martinfowler.com/bliki/BeckDesignRules.html)
     * Passes al tests
     * Expresses intent: clear, expressive, and consistent
     * No logic duplication
@@ -40,6 +40,15 @@ The agenda is structured for a session that lasts for 4 hours, with a lunch brea
     * At the end of the session we will ask people to delete their code and standup. We cannot do this at work :-)
 * Topic: [Conway's Game of Life](https://en.wikipedia.org/wiki/Conways_Game_of_Life)
 * Encourage participants to have the courage to experiment
+
+## Tooling and setup
+
+* Using [VSCode](https://code.visualstudio.com/download) with [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) extension for live pair programming
+    * Alternatively, [VSCode for web](https://vscode.dev) can be used
+* Using [Miro](https://miro.com/) to share the agenda with our participants and to capture feedback from retrospectives
+* Have a video feed always on where all participants can join
+* Have pairs work in separate huddles via Slack and the facilitator can jump in and out from the pairing session
+
 
 ## Test-Driven Development
 
