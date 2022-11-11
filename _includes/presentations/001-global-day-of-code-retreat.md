@@ -65,6 +65,9 @@ By continuing with the session you agree with the code of conduct
 * Using [VSCode](https://code.visualstudio.com/download) with [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) extension for live pair programming
     * Alternatively, [VSCode for web](https://vscode.dev) can be used
 * Using [Miro](https://miro.com/) to share the agenda with our participants and to capture feedback from retrospectives
+* [Maven](https://maven.apache.org/install.html) to build our project
+* Java 17
+* Starting project [here](https://github.com/georgeracu/global-day-of-code-retreat.git)
 * Have a video feed always on where all participants can join
 * Have pairs work in separate huddles via Slack and the facilitator can jump in and out from the pairing session
 
