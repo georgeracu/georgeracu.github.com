@@ -45,6 +45,16 @@
 
 ---
 
+## Why a Layered Approach? - The Swiss Cheese Analogy
+
+<hr/>
+
+![swiss-cheese-test-layers](./../../assets/img/presentation/acceptance_tests_swiss_cheese.svg)
+
+[Image source](https://blog.korny.info/2019-07-22-the-swiss-cheese-model-and-acceptance-tests/acceptance_tests.svg)
+
+---
+
 ## Layered Architecture - detailed view
 
 <hr/>
