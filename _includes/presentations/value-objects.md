@@ -173,5 +173,5 @@ Validated when we built the record, we know that there will always be a value wi
 
 * [Martin Fowler](https://www.martinfowler.com/bliki/ValueObject.html) dedicated an entire post for Value Objects, mostly talking about them being implemented in JavaScript
 * [Anemic Domain Model](https://www.martinfowler.com/bliki/AnemicDomainModel.html)
-* [Patterns of Enterprise Application Architecture, 2002](https://martinfowler.com/books/eaa.html)
+* [Patterns of Enterprise Application Architecture, 2002](https://amzn.to/3H0zxOQ)
 * [A different point of view that ADM is not an anti-pattern](https://blog.inf.ed.ac.uk/sapm/2014/02/04/the-anaemic-domain-model-is-no-anti-pattern-its-a-solid-design/)

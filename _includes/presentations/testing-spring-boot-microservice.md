@@ -45,16 +45,6 @@
 
 ---
 
-## Why a Layered Approach? - The Swiss Cheese Analogy
-
-<hr/>
-
-![swiss-cheese-test-layers](./../../assets/img/presentation/acceptance_tests_swiss_cheese.svg)
-
-[Image source](https://blog.korny.info/2019-07-22-the-swiss-cheese-model-and-acceptance-tests/acceptance_tests.svg)
-
----
-
 ## Layered Architecture - detailed view
 
 <hr/>
@@ -62,6 +52,18 @@
 ![detailed-view](./../../assets/img/presentation/microservice-architecture.png)
 
 [Image source](https://martinfowler.com/articles/microservice-testing/#anatomy-connections)
+
+---
+
+## Why a Layered Approach in Testing?
+
+<hr/>
+
+### The Swiss Cheese Analogy
+
+![swiss-cheese-test-layers](./../../assets/img/presentation/acceptance_tests_swiss_cheese.svg)
+
+[Image source](https://blog.korny.info/2019-07-22-the-swiss-cheese-model-and-acceptance-tests/acceptance_tests.svg)
 
 ---
 
@@ -511,6 +513,18 @@ class RoomEntityToRoomTest {
 * [HttpClientImpl.java](https://github.com/georgeracu/spring-boot-demo-app/blob/main/src/main/java/com/georgeracu/demo/springboot/adapter/out/HttpClientImpl.java)
 * [HttpClientImplTest](https://github.com/georgeracu/spring-boot-demo-app/blob/main/src/test/java/com/georgeracu/demo/springboot/adapter/out/HttpClientImplTest.java)
 * [Resilience4J configuration](https://github.com/georgeracu/spring-boot-demo-app/blob/main/src/main/resources/application.yaml)
+
+---
+
+## Testing pyramid
+
+<hr/>
+
+To do: 
+* show the testing pyramid with the current tests at each layer: many unit tests at the botttom and fewer tests as we go up
+* write an integration test for testing the happy path and show how everything is wired together and working
+* show that edge cases, exceptions, anything than the happy path are tested with unit tests, in their layer, and not tested as integration tests because: slow, hard to setup, not actually testing integration of components.
+* Integration testing is actually testing happy paths and making sure that they work as expected
 
 ---
 

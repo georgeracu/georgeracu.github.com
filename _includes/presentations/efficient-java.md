@@ -494,11 +494,11 @@ public Record Hotel(String name) {
 
 <hr/>
 
-* [Effective Java, 3rd edition](https://www.amazon.co.uk/Effective-Java-Joshua-Bloch-ebook/dp/B078H61SCH/ref=sr_1_1?_encoding=UTF8&keywords=Effective+Java&qid=1649185785&s=digital-text&sr=1-1)
-* [Java Concurrency in Practice](https://jcip.net/)
-* [Functional Programming for Java Developers](https://www.oreilly.com/library/view/functional-programming-for/9781449312657/)
-* [Functional Programming in Java](https://www.manning.com/books/functional-programming-in-java)
-* [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.oreilly.com/library/view/design-patterns-elements/0201633612/)
+* [Effective Java, 3rd edition](https://amzn.to/3EVK9vI)
+* [Java Concurrency in Practice](https://amzn.to/3EMONfE)
+* [Functional Programming for Java Developers](https://amzn.to/3UnjTA4)
+* [Functional Programming in Java](https://amzn.to/3XKaSnL)
+* [Design Patterns: Elements of Reusable Object-Oriented Software](https://amzn.to/3XPorCk)
 
 ---
 
