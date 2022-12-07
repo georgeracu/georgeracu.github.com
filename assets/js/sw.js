@@ -1,4 +1,8 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
+---
+    layout: none
+---
+
+    importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
 
 const { registerRoute } = workbox.routing;
 const { CacheFirst, NetworkFirst, StaleWhileRevalidate } = workbox.strategies;
@@ -25,18 +29,23 @@ registerRoute(
 )
 
 workbox.precaching.precacheAndRoute([
-    {% for post in site.posts limit: 12 -%}
+    {% for post in site.posts limit: 100 -%}
 { url: '{{ post.url }}', revision: '{{ post.date | date: "%Y-%m-%d"}}' },
 {% endfor -%}
-{ url: '/', revision: '{{ site.time | date: "%Y%m%d%H%M" }}' }
+{ url: '/', revision: '{{ site.time | date: "%Y%m%d%H%M" }}' },
+{ url: '/assets/css/', revision: '{{ site.time | date: "%Y%m%d%H%M" }}' }
 ])
 
 registerRoute(
     ({ request }) => request.destination === 'img',
-    new NetworkFirst()
+    new CacheFirst({
+        plugins: [
+            new CacheableResponse({ statuses: [0, 200] })
+        ],
+    })
 );
 
 registerRoute(
-    'assets\/(images|icons|css|img)/',
+    '/assets\/(images|icons|css|img)/',
     new CacheFirst()
 );

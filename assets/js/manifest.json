@@ -4,6 +4,7 @@
     "background_color": "#000",
     "theme_color": "#00a880",
     "start_url": "/",
+    "id": "/",
     "display": "standalone",
     "description": "Developer blog writing about programming, testing, software and other random topics",
     "icons": [
