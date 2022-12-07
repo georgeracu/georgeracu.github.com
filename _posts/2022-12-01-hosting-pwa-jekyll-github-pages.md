@@ -20,4 +20,3 @@ The [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Wo
 ## Generate app icons
 
 https://github.com/elegantapp/pwa-asset-generator
-
