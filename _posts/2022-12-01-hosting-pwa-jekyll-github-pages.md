@@ -1,5 +1,5 @@
 ---
-layout: pwa
+layout: post
 title: Hosting a PWA with Jekyll and Github pages
 permalink: /blog/articles/hosting-pwa-with-jekyll-and-github-pages/
 tags: [jekyll, github, pwa, post]
