@@ -1,7 +1,4 @@
----
-    layout: none
----
-    importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
 
 const { registerRoute } = workbox.routing;
 const { CacheFirst, NetworkFirst, StaleWhileRevalidate } = workbox.strategies;
@@ -13,12 +10,12 @@ workbox.core.setCacheNameDetails({
 });
 
 registerRoute(
-    '{{ site.baseurl }}/',
+    '/',
     new NetworkFirst()
 );
 
 registerRoute(
-    {{ site.baseurl }}/page[0-99]/,
+    /page[0-99]/,
     new NetworkFirst()
 )
 
@@ -35,15 +32,11 @@ workbox.precaching.precacheAndRoute([
 ])
 
 registerRoute(
-    ({ request }) => request.destination === 'image',
-    new CacheFirst({
-        plugins: [
-            new CacheableResponse({ statuses: [0, 200] })
-        ],
-    })
+    ({ request }) => request.destination === 'img',
+    new NetworkFirst()
 );
 
 registerRoute(
-    /assets\/(images|icons|css)/,
+    'assets\/(images|icons|css|img)/',
     new CacheFirst()
 );

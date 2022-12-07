@@ -16,3 +16,8 @@ Using a [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest
 ## Add a Service Worker
 
 The [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) are a proxy between the web app, the website and the network (when available).
+
+## Generate app icons
+
+https://github.com/elegantapp/pwa-asset-generator
+
