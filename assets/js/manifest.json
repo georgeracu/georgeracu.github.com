@@ -8,7 +8,7 @@
     "description": "Developer blog writing about programming, testing, software and other random topics",
     "icons": [
         {
-            "src": "{{ site.baseurl }}/assets/img/icon.svg",
+            "src": "icon.svg",
             "sizes": "any",
             "type": "image/svg+xml"
         }

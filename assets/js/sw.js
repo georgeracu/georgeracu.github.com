@@ -13,12 +13,12 @@ workbox.core.setCacheNameDetails({
 });
 
 registerRoute(
-    '/',
+    '{{ site.baseurl }}/',
     new NetworkFirst()
 );
 
 registerRoute(
-    /page[0-99]/,
+    {{ site.baseurl }}/page[0-99]/,
     new NetworkFirst()
 )
 
