@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "Developer blog",
+    "background_color": "#000",
+    "theme_color": "#00a880",
+    "start_url": "/",
+    "display": "standalone",
+    "description": "Developer blog writing about programming, testing, software and other random topics",
+    "icons": [
+        {
+            "src": "{{ site.baseurl }}/assets/img/icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}

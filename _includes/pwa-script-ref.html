@@ -1,0 +1,8 @@
+<link rel="manifest" href="{{ site.baseurl }}/assets/js/manifest.json">
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('{{ site.baseurl }}/assets/js/sw.js')
+        })
+    }
+</script>
