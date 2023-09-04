@@ -50,8 +50,8 @@ None of this means that we should be getting rid of testers. Testers serve an es
 
 ### First user story
 
-Given a hotel owner
-When I query the API for all my rooms
+Given a hotel owner<br>
+When I query the API for all my rooms<br>
 Then I should get a list with all rooms
 
 ---
@@ -239,17 +239,18 @@ class HotelServiceTest {
 
 <hr/>
 
-Martin Fowler on Object mothers
+Martin Fowler on Object mothers:
 
+_An object mother is a kind of class used in testing to help create example objects that you use for testing._
+
+From [martinfowler.com](https://martinfowler.com/bliki/ObjectMother.html)
+
+This type of object factories are very useful when you need to generate objects for test. 
+
+A library that helps with creating objects populated with random data based on field type is [EasyRandom](https://github.com/j-easy/easy-random)
 ---
 
-## EasyRandom
-
-<hr/>
-
----
-
-## Lesson learned
+## Lessons learned
 
 <hr/>
 
