@@ -3,6 +3,7 @@ layout: post
 title: "Clean Code in Java: Writing Code that Speaks"
 date: 2023-12-06 00:00:00 +0000
 tags: [programming, java, clean code, ai]
+description: "Clean Code in Java: Writing Code that Speaks"
 mathjax: false
 ---
 
