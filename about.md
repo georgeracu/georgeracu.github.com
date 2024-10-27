@@ -10,7 +10,9 @@ I am a software engineer experienced in delivering software solutions for e-comm
 
 ## Work Experience
 
-### Senior Developer (Consultant) - ThoughtWorks (current)
+### Engineering Lead - Toyota Connected Europe 2021 -
+
+### Senior Developer (Lead Consultant) - ThoughtWorks 2019 - 2021
 
 Doing a full stack delivery, with backend made of microservices running on the JVM using Clojure and Java. Using as persistence MongoDB. For communication between services I am using RabbitMQ and REST over HTTP. Exposing data from this services to the user via ReactJS.
 
@@ -54,13 +56,16 @@ SCRUM.ORG
 PSD - Professional Scrum Developer (2016)
 
 UNIVERSITY OF SUSSEX
-Bsc with Hons - Computer Science (G400) with a year in industry (2011-2015)
+MSc with Hons - Advanced Computer Science (2021)
+
+UNIVERSITY OF SUSSEX
+BSc with Hons - Computer Science (G400) with a year in industry (2011-2015)
 
 CISCO ACADEMY - CCNA 1 (2010-2011)
 
-TECHNICAL COLLEGE "DOMNUL TUDOR"
-DIPLOMA OF BACALAUREATE - Mathematics and Informatics (2005)
+TECHNICAL COLLEGE
+DIPLOMA OF BACCALAUREATE - Mathematics and Informatics (2005)
 
 ## Buzz Words
 
-Java 8, Clojure, Kotlin, Groovy, JavaScript, C#, .NET, Postgresql, SQL Server, MongoDB, DropWizard, SpringBoot, Pedestal, ExpressJS, ReactJS, JUnit, NUnit, Spock, Maven, Gradle, Jenkins, GoCD, Git, Docker, TDD, Xtreme Programming, Jira.
+Java, Clojure, Kotlin, Groovy, JavaScript, C#, .NET, Postgresql, SQL Server, MongoDB, DropWizard, SpringBoot, Pedestal, ExpressJS, ReactJS, JUnit, NUnit, Spock, Maven, Gradle, Jenkins, GoCD, Git, Docker, TDD, Xtreme Programming, Jira.
