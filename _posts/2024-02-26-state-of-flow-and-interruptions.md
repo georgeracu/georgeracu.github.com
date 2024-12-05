@@ -31,10 +31,12 @@ Firstly, organizations should prioritize minimizing unnecessary interruptions, w
 
 Providing tools and resources that aid in concentration, such as noise-cancelling headphones or dedicated workspaces, can also contribute to facilitating flow. Additionally, encouraging developers to engage in activities that promote mindfulness and mental clarity, such as regular breaks, exercise, and meditation, can enhance their ability to enter and sustain the flow state during development efforts.
 
-#### References
+---
 
-1. Csikszentmihalyi, Mihaly. "Flow: The Psychology of Optimal Experience." Harper Perennial, 1991.
+## References
+
+1. [Csikszentmihalyi, Mihaly. "Flow: The Psychology of Optimal Experience." Harper Perennial, 1991](https://amzn.to/3BodTDN).
 2. Mark, Gloria, and Victor Gonzalez. "The Cost of Interrupted Work: More Speed and Stress." Proceedings of the SIGCHI Conference on Human Factors in Computing Systems, 2008.
-3. DeMarco, Tom, and Timothy Lister. "Peopleware: Productive Projects and Teams." Addison-Wesley, 1987.
-4. Newport, Cal. "Deep Work: Rules for Focused Success in a Distracted World." Grand Central Publishing, 2016.
+3. [DeMarco, Tom, and Timothy Lister. "Peopleware: Productive Projects and Teams." Addison-Wesley, 1987](https://amzn.to/4f45h2U).
+4. [Newport, Cal. "Deep Work: Rules for Focused Success in a Distracted World." Grand Central Publishing, 2016](https://amzn.to/3ZCrcdf).
 5. Gallagher, Kelly. "The Sweet Spot for Achieving Flow." Harvard Business Review, 2011.

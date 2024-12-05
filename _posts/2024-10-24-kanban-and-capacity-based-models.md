@@ -2,7 +2,7 @@
 layout: post
 title: The Kanban Café - A Story of Flow
 permalink: /blog/articles/the-kanban-cafe-a-story-of-flow/
-tags: [post, kanban, lean, team]
+tags: [post, kanban, lean, team, flow]
 mathjax: false
 description: A comparison between a capacity based model (Kanban) and a push based model using an analogy to a coffee shop to explain flow.
 ---
@@ -62,6 +62,8 @@ Just as Maria adjusts her café’s workflow to improve service, Kanban emphasiz
 Maria’s café thrives because she respects her team’s capacity, just like Kanban respects a team’s workload. Whether in cafés or software development, pushing too much work too fast creates chaos, delays, and poor quality. Kanban, inspired by the Toyota principles of Lean Manufacturing as outlined by Taiichi Ohno, ensures that work flows at a sustainable pace, allowing teams to focus on delivering the best result without burning out.
 
 In software development, adopting Kanban is like running Maria’s café: it’s all about ensuring that the work gets done in an organized, efficient way without overwhelming the team—one cup of coffee, one task, at a time.
+
+---
 
 ## References
 

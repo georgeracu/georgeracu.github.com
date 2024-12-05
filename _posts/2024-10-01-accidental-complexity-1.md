@@ -66,8 +66,8 @@ Stay tuned for dedicated posts on each of these themes, where we’ll continue t
 ## References
 
 * Donald Knuth. _The Art of Computer Programming._
-* Fred Brooks. _No Silver Bullet: Essence and Accidents of Software Engineering._
-* Martin Fowler. _Refactoring and Patterns of Enterprise Application Architecture._
-* Eric Evans. _Domain-Driven Design: Tackling Complexity in the Heart of Software._
-* Bob C. Martin. _Clean Code: A Handbook of Agile Software Craftsmanship._
+* Fred Brooks. _No Silver Bullet: Essence and Accidents of Software Engineering.
+* [Martin Fowler. _Refactoring and Patterns of Enterprise Application Architecture_](https://amzn.to/4fQQ3Qd).
+* [Eric Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software._](https://amzn.to/3OGS8lN).
+* [Bob C. Martin, _Clean Code: A Handbook of Agile Software Craftsmanship_](https://amzn.to/4ioMG4w).
 * Ben Moseley. _Various essays on simplicity in software design._
