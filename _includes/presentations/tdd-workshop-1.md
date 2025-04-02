@@ -13,8 +13,10 @@
 
 1. Setup
 2. What is Test Driven Development?
-3. TDD with constraints
-4. TDD on legacy code
+3. TDD step by step with examples
+4. Exercise
+5. TDD with constraints
+6. TDD on legacy code
 
 ---
 
@@ -22,28 +24,32 @@
 
 <hr/>
 
+Test Driven Development is a software development approach.
+It involves an iterative approach to write clean, maintainable and robust software by writing the tests first.
+Each iteration involves a set of practices.
+
 </br>
 
-#### Write a failing test first and then the code required to fix it
+### Write a failing test first and then the minimum code required to fix it.
 
 ---
 
-# The TDD Cycle
+## The TDD Cycle
 
 <hr/>
 
-Also known as _Test-First Programming_ in Extreme Programming (XP)
+Each iteration of TDD should follow these steps:
 
-* Red: write a failing test
-* Green: write code that makes the test pass (nothing more)
-* Refactor: refactor your code while the test(s) are green
-* Repeat
+1. Red: write a failing test
+2. Green: write code that makes the test pass (nothing more)
+3. Refactor: refactor your code while the test(s) are green
+4. Go to 1.
 
 ---
 
 .center[
 
-# The TDD Cycle
+## The TDD Cycle
 
 <hr/>
 
@@ -62,7 +68,6 @@ CDT - Code Driven Tests
 * When should I stop adding tests?
 * Do we have enough test coverage?
 
-
 TDD - Test Driven Development
 
 * Stop writing code when your test passes
@@ -71,11 +76,11 @@ TDD - Test Driven Development
 
 ---
 
-# Remember
+## Remember
 
 <hr/>
 
-#### _Never write new functionality without writing a failing test first_
+### _Never write new functionality without writing a failing test first_
 
 ---
 
@@ -91,11 +96,11 @@ TDD - Test Driven Development
 
 ---
 
-# Properties of our tests
+## Properties of our tests
 
 <hr/>
 
-* Automated run and result check
+* Automated - run and result check automatically
 * Thorough - test what's likely to break, use coverage tools to keep a consistent coverage
 * Repeatable - should be independent from the environment and  produce the same result
 * Independent - independent from the environment and from each other
@@ -124,6 +129,43 @@ Aka London style TDD
 * Maven
 * An active Internet connection
 * A text editor or IDE (IntelliJ IDEA Community Edition, VS Code etc.)
+
+---
+
+## Practice
+
+<hr/>
+
+### Problem to solve
+
+Compute the balance of an account:
+
+* The account has a balance that starts at zero.
+* The account supports deposit and withdrawal operations.
+* The balance is updated when deposits or withdrawals occur.
+* If withdrawals exceed the current balance, it should handle overdrafts or throw an exception.
+
+---
+
+## Write your first failing test
+
+<hr/>
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class AccountTest {
+
+    @Test
+    void testInitialBalanceIsZero() {
+        Account account = new Account();
+        assertEquals(0, account.getBalance());
+    }
+}
+```
+
+Run the test. It will fail because the Account class and getBalance method don't exist yet.
 
 ---
 
