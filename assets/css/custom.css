@@ -1,7 +1,31 @@
+/* Custom styles for Pico CSS blog */
 .blog-footer {
-    padding: 2.5rem 0;
-    color: #727272;
     text-align: center;
-    background-color: #f9f9f9;
-    border-top: .05rem solid #e5e5e5;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--pico-muted-border-color);
+    color: var(--pico-muted-color);
+}
+
+/* Grid layout for main content and sidebar */
+main .grid {
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    main .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Archives navigation styling */
+aside nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+aside nav ul li {
+    margin-bottom: 0.5rem;
 }

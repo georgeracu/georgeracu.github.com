@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 
 {% include head.html %}
 
 <body>
   <div class="container">
     {% include header.html %}
-  </div>
-  <main class="container" style="padding-top: 3em;">
-    <div class="row">
-      <div class="col-md-9">
-        {{ content }}
-      </div>
-      <div class="col-md-3">
-        <div class="p-4">
-          <h4 class="fst-italic">Archives</h4>
-          <ol class="list-unstyled mb-0">
+    
+    <main>
+      <div class="grid">
+        <article>
+          {{ content }}
+        </article>
+        
+        <aside>
+          <nav>
+            <h4>Archives</h4>
             {% include component/archives.html %}
-          </ol>
-        </div>
+          </nav>
+        </aside>
       </div>
-  </main>
+    </main>
 
-  {% include footer.html %}
-
+    {% include footer.html %}
+  </div>
 </body>
 
 </html>
