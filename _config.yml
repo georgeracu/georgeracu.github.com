@@ -8,11 +8,7 @@ twitter_username: georgeracu
 github_username: georgeracu
 google_analytics: UA-53216185-7
 
-theme: minima
-# theme: jekyll-theme-minimal
-# remote_theme: sighingnow/jekyll-gitbook
-minima:
-  skin: dark
+theme: alembic-jekyll-theme
 
 # Build settings
 markdown: kramdown

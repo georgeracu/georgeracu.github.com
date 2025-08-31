@@ -19,3 +19,11 @@ Using [remarkjs](https://github.com/gnab/remark/wiki) to render slides from Mark
 {% highlight clojure %}
 (prn "boo")
 {% endhighlight %}
+
+## How to run locally
+
+```shell
+bundle install
+bundle exec jekyll clean
+bundle exec jekyll run
+```
