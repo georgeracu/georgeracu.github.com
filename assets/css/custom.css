@@ -347,7 +347,8 @@ article:not(.blog-post):not(.blog-article) {
     
     .container,
     .blog-content,
-    article.blog-post {
+    article.blog-post,
+    .blog-page {
         padding: 0 15px;
     }
     
@@ -360,8 +361,21 @@ article:not(.blog-post):not(.blog-article) {
     }
     
     .blog-description,
-    .post-content {
+    .post-content,
+    .page-content {
         font-size: 16px;
+    }
+    
+    .page-title {
+        font-size: 28px;
+    }
+    
+    .page-content h2 {
+        font-size: 22px;
+    }
+    
+    .page-content h3 {
+        font-size: 18px;
     }
     
     header nav ul {
@@ -412,6 +426,77 @@ button:focus-visible {
     outline: 1px dotted var(--blog-text-color);
     outline-offset: 1px;
     border-radius: 0;
+}
+
+/* Blog Page Layout */
+.blog-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    animation: none;
+}
+
+.page-header {
+    border: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    color: var(--blog-text-color);
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+}
+
+.page-content {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--blog-text-color);
+}
+
+.page-content h2,
+.page-content h3,
+.page-content h4 {
+    color: var(--blog-text-color);
+    font-weight: normal;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.page-content h2 {
+    font-size: 24px;
+}
+
+.page-content h3 {
+    font-size: 20px;
+}
+
+.page-content h4 {
+    font-size: 18px;
+}
+
+.page-content p {
+    margin-bottom: 20px;
+}
+
+.page-content ul,
+.page-content ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.page-content li {
+    margin-bottom: 8px;
 }
 
 /* Blog Archives Section */
@@ -486,6 +571,177 @@ button:focus-visible {
     }
     
     .archive-link {
+        font-size: 13px;
+    }
+}
+
+/* About page specific styles */
+.intro-section {
+    margin-bottom: 40px;
+}
+
+.intro-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--blog-text-color);
+}
+
+.experience-section {
+    margin-bottom: 40px;
+}
+
+.job-entry {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--blog-border-color);
+}
+
+.job-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.job-title {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: var(--blog-text-color);
+}
+
+.job-period {
+    font-size: 14px;
+    color: var(--blog-muted-color);
+    font-weight: normal;
+}
+
+.job-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: var(--blog-text-color);
+}
+
+.education-section {
+    margin-bottom: 40px;
+}
+
+.education-category {
+    margin-bottom: 30px;
+}
+
+.education-category:last-child {
+    margin-bottom: 0;
+}
+
+.education-category-title {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    color: var(--blog-text-color);
+}
+
+.education-item {
+    margin-bottom: 20px;
+}
+
+.education-item:last-child {
+    margin-bottom: 0;
+}
+
+.degree-title {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    color: var(--blog-text-color);
+}
+
+.degree-year {
+    font-size: 14px;
+    color: var(--blog-muted-color);
+    font-weight: normal;
+}
+
+.institution {
+    font-size: 14px;
+    color: var(--blog-muted-color);
+    margin-bottom: 0;
+}
+
+.certification-list,
+.learning-list {
+    list-style: disc;
+    margin: 0;
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.certification-item,
+.learning-item {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: var(--blog-text-color);
+}
+
+.certification-item:last-child,
+.learning-item:last-child {
+    margin-bottom: 0;
+}
+
+.skills-section {
+    margin-bottom: 0;
+}
+
+.skills-category {
+    margin-bottom: 25px;
+}
+
+.skills-category:last-child {
+    margin-bottom: 0;
+}
+
+.skills-category-title {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 8px;
+    color: var(--blog-text-color);
+}
+
+.skills-list {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    color: var(--blog-text-color);
+}
+
+/* Mobile responsiveness for About page */
+@media (max-width: 768px) {
+    .intro-text {
+        font-size: 16px;
+    }
+    
+    .job-title {
+        font-size: 16px;
+    }
+    
+    .job-description {
+        font-size: 14px;
+    }
+    
+    .education-category-title {
+        font-size: 16px;
+    }
+    
+    .degree-title {
+        font-size: 14px;
+    }
+    
+    .skills-category-title {
+        font-size: 14px;
+    }
+    
+    .skills-list {
         font-size: 13px;
     }
 }
