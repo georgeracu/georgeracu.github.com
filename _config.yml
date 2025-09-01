@@ -9,7 +9,10 @@ github_username: georgeracu
 linkedin_url: "https://www.linkedin.com/in/george-racu-70670443/"
 google_analytics: UA-53216185-7
 
-theme: alembic-jekyll-theme
+# theme: alembic-jekyll-theme
+theme: minima
+# theme: jekyll-theme-minimal
+# remote_theme: "jekyll/minima@1fe0fbf"
 
 # Build settings
 markdown: kramdown

@@ -250,6 +250,7 @@ article.blog-post:hover {
 .post-content p {
     margin-bottom: 20px;
     text-align: justify;
+    color: var(--blog-text-color);
 }
 
 .post-content ul,
