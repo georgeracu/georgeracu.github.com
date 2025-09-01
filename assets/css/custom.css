@@ -344,56 +344,61 @@ article:not(.blog-post):not(.blog-article) {
     body {
         font-size: 16px;
     }
-    
+
     .container,
     .blog-content,
     article.blog-post,
     .blog-page {
         padding: 0 15px;
     }
-    
+
     .blog-title {
         font-size: 24px;
     }
-    
+
     .post-title {
         font-size: 28px;
     }
-    
+
     .blog-description,
     .post-content,
     .page-content {
         font-size: 16px;
     }
-    
+
     .page-title {
         font-size: 28px;
     }
-    
+
     .page-content h2 {
         font-size: 22px;
     }
-    
+
     .page-content h3 {
         font-size: 18px;
     }
-    
+
     header nav ul {
         gap: 15px;
     }
-    
+
     header nav ul li a {
         font-size: 13px;
         padding: 5px 8px;
     }
-    
+
     header nav ul li strong a {
         font-size: 15px;
     }
 }
 
 /* Typography improvements */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: normal;
     color: var(--blog-text-color);
 }
@@ -557,19 +562,19 @@ button:focus-visible {
     .blog-archives {
         padding: 40px 15px 0 15px;
     }
-    
+
     .archives-heading {
         font-size: 22px;
     }
-    
+
     .year-heading {
         font-size: 16px;
     }
-    
+
     .archive-item {
         margin-bottom: 10px;
     }
-    
+
     .archive-link {
         font-size: 13px;
     }
@@ -720,28 +725,310 @@ button:focus-visible {
     .intro-text {
         font-size: 16px;
     }
-    
+
     .job-title {
         font-size: 16px;
     }
-    
+
     .job-description {
         font-size: 14px;
     }
-    
+
     .education-category-title {
         font-size: 16px;
     }
-    
+
     .degree-title {
         font-size: 14px;
     }
-    
+
     .skills-category-title {
         font-size: 14px;
     }
-    
+
     .skills-list {
         font-size: 13px;
+    }
+}
+
+/* Contact page specific styles */
+.contact-intro {
+    margin-bottom: 40px;
+}
+
+.contact-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: var(--blog-text-color);
+}
+
+.contact-methods {
+    margin-bottom: 40px;
+}
+
+.contact-section-title {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: var(--blog-text-color);
+}
+
+.contact-method {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--blog-border-color);
+}
+
+.contact-method:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.method-title {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 8px;
+    color: var(--blog-text-color);
+}
+
+.method-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: var(--blog-text-color);
+}
+
+.contact-link {
+    margin-bottom: 0;
+}
+
+.contact-link a {
+    font-size: 14px;
+    color: var(--blog-link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-link a:hover {
+    color: var(--blog-link-hover);
+}
+
+.contact-form-section {
+    margin-bottom: 0;
+}
+
+.form-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--blog-text-color);
+}
+
+.contact-form {
+    max-width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 6px;
+    color: var(--blog-text-color);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--blog-text-color);
+    background-color: var(--blog-bg-color);
+    border: 1px solid var(--blog-border-color);
+    border-radius: 0;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--blog-link-color);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-submit {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--blog-bg-color);
+    background-color: var(--blog-link-color);
+    border: 1px solid var(--blog-link-color);
+    border-radius: 0;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.form-submit:hover {
+    background-color: var(--blog-link-hover);
+    border-color: var(--blog-link-hover);
+}
+
+.form-hint {
+    display: block;
+    font-size: 12px;
+    color: var(--blog-muted-color);
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* Mobile responsiveness for Contact page */
+@media (max-width: 768px) {
+    .contact-description {
+        font-size: 16px;
+    }
+
+    .contact-section-title {
+        font-size: 16px;
+    }
+
+    .method-title {
+        font-size: 14px;
+    }
+
+    .method-description {
+        font-size: 13px;
+    }
+
+    .contact-link a {
+        font-size: 13px;
+    }
+
+    .form-description {
+        font-size: 14px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+
+    .form-input,
+    .form-textarea {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .form-submit {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}
+
+/* Categories page specific styles */
+.categories-intro {
+    margin-bottom: 40px;
+}
+
+.categories-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: var(--blog-text-color);
+}
+
+.categories-list {
+    margin-bottom: 0;
+}
+
+.category-group {
+    margin-bottom: 35px;
+    /* padding-bottom: 25px; */
+    border-bottom: 1px solid var(--blog-border-color);
+}
+
+.category-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.category-title {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    color: var(--blog-text-color);
+}
+
+.category-posts {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.category-post-item {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-post-item:last-child {
+    margin-bottom: 0;
+}
+
+.category-post-link {
+    font-size: 14px;
+    color: var(--blog-link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    flex: 1;
+    min-width: 0;
+}
+
+.category-post-link:hover {
+    color: var(--blog-link-hover);
+}
+
+.category-post-date {
+    font-size: 12px;
+    color: var(--blog-muted-color);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Mobile responsiveness for Categories page */
+@media (max-width: 768px) {
+    .categories-description {
+        font-size: 16px;
+    }
+
+    .category-title {
+        font-size: 16px;
+    }
+
+    .category-post-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .category-post-link {
+        font-size: 13px;
+    }
+
+    .category-post-date {
+        font-size: 11px;
+        margin-left: 0;
     }
 }

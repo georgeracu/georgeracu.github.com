@@ -4,20 +4,34 @@ permalink: /categories/
 title: Categories
 ---
 
-<div id="archives">
-    {% for category in site.tags %}
-    <div class="archive-group">
-        {% capture category_name %}{{ category | first }}{% endcapture %}
-        <div id="#{{ category_name | slugize }}"></div>
-        <p></p>
+<div class="page-content">
 
-        <h3 class="category-head text-capitalize">{{ category_name }}</h3>
-        <a name="{{ category_name | slugize }}"></a>
-        {% for post in site.tags[category_name] %}
-        <article class="archive-item">
-            <a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
-        </article>
+    <section class="categories-intro">
+        <h2>Categories</h2>
+        <p class="categories-description">Browse articles organized by topic. Each category contains posts related to
+            specific technologies, methodologies, or concepts.</p>
+    </section>
+
+    <section class="categories-list">
+        {% assign sorted_categories = site.tags | sort %}
+        {% for category in sorted_categories %}
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        {% assign category_posts = category | last %}
+        {% if category_posts.size > 0 %}
+        <div class="category-group">
+            <h3 class="category-title" id="{{ category_name | slugify }}">{{ category_name | capitalize }}</h3>
+            <ul class="category-posts">
+                {% assign sorted_posts = category_posts | sort: 'date' | reverse %}
+                {% for post in sorted_posts %}
+                <li class="category-post-item">
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="category-post-link">{{ post.title }}</a>
+                    <span class="category-post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
         {% endfor %}
-    </div>
-    {% endfor %}
+    </section>
+
 </div>
