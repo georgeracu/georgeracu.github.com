@@ -8,7 +8,7 @@ mathjax: false
 description: A real life story on how reducing time spent on building and running slow tests and pipelines will speed up Software Development and Innovation and, improve Developer Experience.
 ---
 
-## The Cost of Slow Pipelines: A Tale of Wasted Time  
+## Daily Practice  
 
 Imagine you’re a developer named Sam, starting your day with a strong cup of coffee and a long list of tickets to tackle. You fire up your IDE, make the changes, and run your **first local build** to ensure everything works as expected. While the build churns for **~10 minutes**, you glance at your inbox, scroll through Slack, and lose focus. Finally, the build completes. You make a small adjustment and run the build again. **Another 10 minutes pass**.  
 
