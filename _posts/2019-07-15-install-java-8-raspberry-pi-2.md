@@ -3,6 +3,7 @@ layout: post
 title: "Running a Clojure Pedestal application on Raspberry Pi model B revision 2"
 date: 2019-07-15 07:00:00 +0000
 tags: [programming, clojure, raspberrypi, pedestal]
+description: Complete guide to deploying a Clojure Pedestal web application on Raspberry Pi, including Java 8 installation, uberjar compilation, SSH setup, and deployment instructions for ARM-based hardware.
 mathjax: false
 ---
 

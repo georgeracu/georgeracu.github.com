@@ -3,6 +3,7 @@ layout: post
 title: "Clojure from zero to hero (part 3) - First endpoint"
 date: 2019-07-08 07:00:00 +0000
 tags: [programming, clojure]
+description: Fourth episode demonstrating Test-Driven Development in Clojure by creating a custom JSON API endpoint using Pedestal framework, covering IDE setup, TDD workflow, and endpoint implementation with tests.
 mathjax: false
 ---
 

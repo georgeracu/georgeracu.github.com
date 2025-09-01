@@ -3,6 +3,7 @@ layout: post
 title: "Setup GPG on Mac and sign git repositories"
 date: 2019-09-10 07:00:00 +0000
 tags: [programming, software-engineering, gpg, git]
+description: Step-by-step guide to installing and configuring GPG on macOS for signing Git commits, including Homebrew installation, key generation, GitHub integration, and repository-specific configuration.
 mathjax: false
 ---
 

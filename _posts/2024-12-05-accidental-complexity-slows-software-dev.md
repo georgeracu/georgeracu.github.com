@@ -4,7 +4,7 @@ title: Keeping Software Simple to speed up Software Development
 permalink: /blog/articles/keeping-software-simple-to-speed-up-software-development/
 tags: [post, accidental-complexity, lean, flow, ai]
 mathjax: false
-description: Real life analogies on how reducing complexity will speed up Software Development
+description: Practical guide to accelerating software development by keeping systems simple, using real-world analogies from lean manufacturing and assembly lines to demonstrate how reducing complexity improves development velocity and team productivity.
 ---
 
 ## Keeping Software Simple: Lessons from a Lean Assembly Line

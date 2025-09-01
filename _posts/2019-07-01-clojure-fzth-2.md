@@ -3,6 +3,7 @@ layout: post
 title: "Clojure from zero to hero (part 2) - A bit of syntax"
 date: 2019-07-01 07:00:00 +0000
 tags: [programming, clojure]
+description: Third episode introducing Clojure syntax fundamentals, covering parentheses usage, REPL development workflow, namespaces, comments, function definitions, and setting up a development environment.
 mathjax: false
 ---
 

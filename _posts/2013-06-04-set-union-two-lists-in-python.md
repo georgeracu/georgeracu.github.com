@@ -3,6 +3,7 @@ layout: post
 title: "Set union of two lists in Python"
 date: 2013-06-04 07:00:00 +0000
 tags: [programming, python]
+description: A simple Python tutorial demonstrating how to implement set union functionality between two lists, combining unique elements from both lists into a single modified list using basic iteration and conditional logic.
 mathjax: false
 ---
 

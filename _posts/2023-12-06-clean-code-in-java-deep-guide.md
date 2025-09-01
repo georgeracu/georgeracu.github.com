@@ -3,7 +3,7 @@ layout: post
 title: "Clean Code in Java: Writing Code that Speaks"
 date: 2023-12-06 00:00:00 +0000
 tags: [programming, java, clean code, ai]
-description: "Clean Code in Java: Writing Code that Speaks"
+description: Comprehensive guide to writing clean, maintainable Java code with practical examples covering meaningful naming, DRY principles, small cohesive functions, and effective testing strategies for professional software development.
 mathjax: false
 ---
 

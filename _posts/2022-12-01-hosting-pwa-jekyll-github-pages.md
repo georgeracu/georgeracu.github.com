@@ -4,7 +4,7 @@ title: Hosting a PWA with Jekyll and Github pages
 permalink: /blog/articles/hosting-pwa-with-jekyll-and-github-pages/
 tags: [jekyll, github, pwa, post]
 mathjax: false
-description: Progressive Web App hosted on Github pages and generatd by Jekyll
+description: Step-by-step guide to creating and hosting a Progressive Web App (PWA) using Jekyll static site generator and GitHub Pages, including manifest.json setup, service worker implementation, and app icon generation.
 ---
 
 In order to have a [Progressive Web App (PWA)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps) hosted in GitHub and served as part of your Jekyll generated website we need to follow several steps listed bellow.

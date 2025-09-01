@@ -3,6 +3,7 @@ layout: post
 title: "Clojure from zero to hero (1) - explaining project.clj"
 date: 2019-06-25 07:00:00 +0000
 tags: [programming, clojure]
+description: Second episode exploring Clojure project structure, explaining the project.clj configuration file, dependencies management, Leiningen profiles, and how to build and run Clojure applications.
 mathjax: false
 ---
 

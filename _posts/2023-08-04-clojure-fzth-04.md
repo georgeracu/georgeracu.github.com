@@ -3,6 +3,7 @@ layout: post
 title: "Consuming RabbitMQ Messages with Clojure: A Step-by-Step Tutorial with Tests"
 date: 2023-08-04 07:00:00 +0000
 tags: [programming, clojure, ai]
+description: Comprehensive tutorial on consuming RabbitMQ messages in Clojure using the Langohr library, covering setup, connection management, message processing, and testing strategies for distributed messaging systems.
 mathjax: false
 ---
 

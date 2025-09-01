@@ -3,6 +3,7 @@ layout: post
 title: "Google Glass Development - setup tools, environment and turn on debugging on Glass"
 date: 2014-07-09 07:00:00 +0000
 tags: [programming, Android, Google Glass]
+description: A comprehensive guide to setting up Google Glass development environment using Android Studio, enabling debug mode on Google Glass hardware, and navigating the Glass interface for app development.
 mathjax: false
 ---
 

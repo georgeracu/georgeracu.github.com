@@ -3,6 +3,7 @@ layout: post
 title: "Clojure from zero to hero (0) - creating a Pedestal app"
 date: 2019-06-18 07:00:00 +0000
 tags: [programming, clojure]
+description: First episode in the Clojure tutorial series, covering installation of Leiningen and creating your first Pedestal web API application with step-by-step instructions and version control setup.
 mathjax: false
 ---
 

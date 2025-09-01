@@ -3,7 +3,7 @@ layout: post
 title: "Must Have on Message Payload"
 date: 2023-08-06 07:00:00 +0000
 tags: [programming, message, asyncapi]
-description: "Must have on each message published inside a domain"
+description: Essential guide to defining mandatory fields and metadata standards for message payloads in domain-driven messaging systems, covering consistency rules, structure requirements, and best practices for distributed communication.
 mathjax: false
 ---
 

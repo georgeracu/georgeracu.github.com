@@ -3,6 +3,7 @@ layout: post
 title: "How To: Get the rendered HTML of a webpage with Python"
 date: 2013-06-07 07:00:00 +0000
 tags: [programming, python]
+description: A practical Python tutorial showing how to fetch and retrieve the rendered HTML content from web pages using the urllib2 library, with error handling and complete code examples for web scraping applications.
 mathjax: false
 ---
 

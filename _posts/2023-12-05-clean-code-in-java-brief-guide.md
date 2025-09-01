@@ -3,6 +3,7 @@ layout: post
 title: "Clean Code in Java: A concise guide"
 date: 2023-12-06 00:00:00 +0000
 tags: [programming, java, clean code, ai]
+description: Practical introduction to clean code principles in Java, covering meaningful variable naming, proper indentation, avoiding unnecessary complexity, and writing effective unit tests with JUnit examples.
 mathjax: false
 ---
 

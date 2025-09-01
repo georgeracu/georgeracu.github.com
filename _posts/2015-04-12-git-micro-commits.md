@@ -3,6 +3,7 @@ layout: post
 title: "Git micro commits"
 date: 2015-04-12 07:00:00 +0000
 tags: [programming, git]
+description: Exploring the benefits of making frequent, small Git commits versus large commits when transitioning from SVN to Git workflow, with practical examples of improved version control and collaboration.
 mathjax: false
 ---
 
