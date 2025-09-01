@@ -1,29 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="auto">
+<html lang="en">
 
 {% include head.html %}
 
 <body>
-  <div class="container">
-    {% include header.html %}
-    
-    <main>
-      <div class="grid">
-        <article>
-          {{ content }}
-        </article>
-        
-        <aside>
-          <nav>
-            <h4>Archives</h4>
-            {% include component/archives.html %}
-          </nav>
-        </aside>
-      </div>
-    </main>
+  {% include header.html %}
+  
+  <main>
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
 
-    {% include footer.html %}
-  </div>
+  {% include footer.html %}
 </body>
 
 </html>

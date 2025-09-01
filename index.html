@@ -2,20 +2,38 @@
 layout: default
 ---
 
-<article class="blog-post">
+<div class="blog-content">
+  {% for post in site.posts limit:5 %}
+  <article class="blog-article">
+    <h2 class="blog-title">
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h2>
+    <p class="blog-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+    <p class="blog-description">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+  </article>
+  {% endfor %}
+</div>
 
-  <h2 class="blog-post">Posts</h2>
-
-  <ul class="list-unstyled">
-    {% for post in site.posts %}
-    <li>
-      <h5>
-        <a class="text-decoration-none" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h5>
-      <p class="font-monospace">{{ post.date | date: "%b %-d, %Y" }}</p>
-      <p>{{ post.description | truncatewords: 20 }}</p>
-    </li>
-    {% endfor %}
-  </ul>
-
-</article>
+{% if site.posts.size > 5 %}
+<div class="blog-archives">
+  <h2 class="archives-heading">Archives</h2>
+  
+  {% assign remaining_posts = site.posts | offset: 5 %}
+  {% assign posts_by_year = remaining_posts | group_by_exp: 'post', 'post.date | date: "%Y"' | sort: 'name' | reverse %}
+  
+  {% for year_group in posts_by_year %}
+    <div class="archive-year">
+      <h3 class="year-heading">{{ year_group.name }}</h3>
+      
+      <ul class="archive-list">
+        {% assign sorted_posts = year_group.items | sort: 'date' | reverse %}
+        {% for post in sorted_posts %}
+          <li class="archive-item">
+            <a href="{{ post.url | prepend: site.baseurl }}" class="archive-link">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>
+{% endif %}
