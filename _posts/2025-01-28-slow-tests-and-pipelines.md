@@ -105,4 +105,5 @@ So the next time you’re waiting for a pipeline to finish, ask yourself: *How m
 
 ## References
 
-- [Bob C. Martin, *Clean Code: A Handbook of Agile Software Craftsmanship*](https://amzn.to/4ioMG4w).
+{% assign clean_code = site.data.links | where: "id", 3 | first %}
+- [{{ clean_code.author }}, _{{ clean_code.title }}_]({{ clean_code.link }})

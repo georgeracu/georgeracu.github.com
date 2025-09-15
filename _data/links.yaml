@@ -1,0 +1,39 @@
+- id: 1
+  author: Martin Fowler
+  title: "Refactoring and Patterns of Enterprise Application Architecture"
+  link: https://amzn.to/4fQQ3Qd
+
+- id: 2
+  author: Eric Evans
+  title: "Domain-Driven Design: Tackling Complexity in the Heart of Software"
+  link: https://amzn.to/3OGS8lN
+
+- id: 3
+  author: Bob C. Martin
+  title: "Clean Code: A Handbook of Agile Software Craftsmanship"
+  link: https://amzn.to/4ioMG4w
+
+- id: 4
+  author: Ohno, Taiichi
+  title: "Toyota Production System: Beyond Large-Scale Production. Productivity Press, 1988"
+  link: https://amzn.to/40n19rg
+
+- id: 5
+  author: Liker, Jefrey
+  title: "The Toyota Way, Second Edition: 14 Management Principles from the World's Greatest Manufacturer, 2021"
+  link: https://amzn.to/4e1CQ5l
+
+- id: 6
+  author: Charnas, Dan
+  title: "Work Clean: The Life-Changing Power of Mise-En-Place to Organize Your Life, Work and Mind"
+  link: https://amzn.to/49mDfP4
+
+- id: 7
+  author: Fred Brooks
+  title: "No Silver Bullet: Essence and Accidents of Software Engineering"
+  link: "#"
+
+- id: 8
+  author: Ben Moseley
+  title: "Various essays on simplicity in software design"
+  link: "#"

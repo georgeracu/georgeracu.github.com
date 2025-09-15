@@ -76,11 +76,19 @@ The beauty of Toyota's principles isn't in their complexity – it's in their si
 
 ## References
 
-- Fred Brooks. _No Silver Bullet: Essence and Accidents of Software Engineering_.
-- [Martin Fowler. _Refactoring and Patterns of Enterprise Application Architecture_](https://amzn.to/4fQQ3Qd).
-- [Eric Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software._](https://amzn.to/3OGS8lN).
-- [Bob C. Martin, _Clean Code: A Handbook of Agile Software Craftsmanship_](https://amzn.to/4ioMG4w).
-- Ben Moseley. _Various essays on simplicity in software design._
-- [Ohno, Taiichi. _Toyota Production System: Beyond Large-Scale Production. Productivity Press, 1988_](https://amzn.to/40n19rg).
-- [Liker, Jefrey. _The Toyota Way, Second Edition: 14 Management Principles from the World's Greatest Manufacturer, 2021_](https://amzn.to/4e1CQ5l).
-- [Charnas, Dan. _Work Clean: The Life-Changing Power of Mise-En-Place to Organize Your Life, Work and Mind_](https://amzn.to/49mDfP4).
+{% assign fred_brooks = site.data.links | where: "id", 7 | first %}
+- [{{ fred_brooks.author }}. _{{ fred_brooks.title }}_]({{ fred_brooks.link }})
+{% assign martin_fowler = site.data.links | where: "id", 1 | first %}
+- [{{ martin_fowler.author }}. _{{ martin_fowler.title }}_]({{ martin_fowler.link }})
+{% assign domain_driven_design = site.data.links | where: "id", 2 | first %}
+- [{{ domain_driven_design.author }}, _{{ domain_driven_design.title }}_]({{ domain_driven_design.link }})
+{% assign clean_code = site.data.links | where: "id", 3 | first %}
+- [{{ clean_code.author }}, _{{ clean_code.title }}_]({{ clean_code.link }})
+{% assign ben_moseley = site.data.links | where: "id", 8 | first %}
+- [{{ ben_moseley.author }}. _{{ ben_moseley.title }}_]({{ ben_moseley.link }})
+{% assign toyota_production = site.data.links | where: "id", 4 | first %}
+- [{{ toyota_production.author }}. _{{ toyota_production.title }}_]({{ toyota_production.link }})
+{% assign toyota_way = site.data.links | where: "id", 5 | first %}
+- [{{ toyota_way.author }}. _{{ toyota_way.title }}_]({{ toyota_way.link }})
+{% assign work_clean = site.data.links | where: "id", 6 | first %}
+- [{{ work_clean.author }}. _{{ work_clean.title }}_]({{ work_clean.link }})
