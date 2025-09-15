@@ -83,6 +83,7 @@ Not everything needs to be implemented from day one, even though the earlier you
 - Testing strategy
   - Unit tests: JUnit5
   - Integration tests: TestContainers, Docker, LocalStack etc.
+  - Architectural tests using ArchUnit
 - Linting and code style
 - AI coding assistant adoption
 
