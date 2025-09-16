@@ -124,4 +124,16 @@ Not everything needs to be implemented from day one, even though the earlier you
 - Capacity planning refinements
 - Architectural evolution: continuous analysis of the system usage and performance behaviour, coupled with product evolution
 
+### 6. Nice to have
+
+- Automatic dependency management (upgrades): see Dependabot or RenovateBot
+
+### 7. Development practices
+
+- Do trunk based development;
+- Have 3 development environments: `development`, `staging` and `production`;
+- Have a dedicated performance testing environment that mimicks productions;
+- Do code reviews (human and AI assisted);
+- Treat test code as production code;
+
 Future blog posts will explain each phase in more detail.
