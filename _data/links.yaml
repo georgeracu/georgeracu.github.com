@@ -37,3 +37,8 @@
   author: Ben Moseley
   title: "Various essays on simplicity in software design"
   link: "#"
+
+- id: 9
+  author: Donald Knuth
+  title: "The Art of Computer Programming"
+  link: "https://amzn.to/3XVp8Qg"

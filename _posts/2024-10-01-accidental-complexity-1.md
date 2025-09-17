@@ -65,9 +65,16 @@ Stay tuned for dedicated posts on each of these themes, where we’ll continue t
 
 ## References
 
-* Donald Knuth. _The Art of Computer Programming._
-* Fred Brooks. _No Silver Bullet: Essence and Accidents of Software Engineering.
-* [Martin Fowler. _Refactoring and Patterns of Enterprise Application Architecture_](https://amzn.to/4fQQ3Qd).
-* [Eric Evans, _Domain-Driven Design: Tackling Complexity in the Heart of Software._](https://amzn.to/3OGS8lN).
-* [Bob C. Martin, _Clean Code: A Handbook of Agile Software Craftsmanship_](https://amzn.to/4ioMG4w).
-* Ben Moseley. _Various essays on simplicity in software design._
+{% assign knuth = site.data.links | where: "id", 9 | first %}
+{% assign brooks = site.data.links | where: "id", 7 | first %}
+{% assign fowler = site.data.links | where: "id", 1 | first %}
+{% assign evans = site.data.links | where: "id", 2 | first %}
+{% assign martin = site.data.links | where: "id", 3 | first %}
+{% assign moseley = site.data.links | where: "id", 8 | first %}
+
+* [{{ knuth.author }}. {{ knuth.title }}]({{ knuth.link }})
+* [{{ brooks.author }}. {{ brooks.title }}]({{ brooks.link }})
+* [{{ fowler.author }}. {{ fowler.title }}]({{ fowler.link }})
+* [{{ evans.author }}. {{ evans.title }}]({{ evans.link }})
+* [{{ martin.author }}. {{ martin.title }}]({{ martin.link }})
+* [{{ moseley.author }}. {{ moseley.title }}]({{ moseley.link }})
