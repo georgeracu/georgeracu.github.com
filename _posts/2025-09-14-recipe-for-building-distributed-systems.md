@@ -86,6 +86,8 @@ Not everything needs to be implemented from day one, even though the earlier you
   - Architectural tests using ArchUnit
 - Linting and code style
 - AI coding assistant adoption
+- Use a "monolith first" pattern, as described by {% assign link = site.data.links | where: "id", 10 | first %}[{{ link.author }} in {{ link.title }}]({{ link.link }})
+- Don't build a distributed monolith (one of the very few "don't do it" items)
 
 ### 2. A basic solid foundation
 

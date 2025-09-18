@@ -7,6 +7,14 @@ mathjax: false
 description: This is the first step in a collection of topics and how-to's on software development. This blog post describes the concept of a Walking Skeleton in software development.
 ---
 
+## Why the Walking Skeleton Approach?
+
+Building distributed software systems is inherently complex. Unlike monolithic applications where components communicate through in-memory calls, distributed systems introduce network communication, partial failures, eventual consistency, and coordination challenges that can catch even experienced developers off guard.
+
+The Walking Skeleton approach serves as a practical foundation - a set of battle-tested practices that help teams avoid common pitfalls and build systems that are reliable, maintainable, and scalable from day one. Rather than learning these lessons through painful production incidents, teams can proactively adopt these patterns and processes.
+
+The goal isn't perfection from the start, but establishing a foundation that supports iterative improvement and reduces the likelihood of architectural debt that becomes expensive to fix later.
+
 ## What is a Walking Skeleton
 
 A Walking Skeleton, as described by Alistair Cockburn, is a tiny implementation of the system that performs a small end-to-end function. It need not use the final architecture, but it should link together the main architectural components. The Walking Skeleton grows to become the whole system - hence the metaphor of a skeleton that "walks" through the entire application lifecycle.
@@ -22,6 +30,57 @@ The concept, also discussed in "The Pragmatic Programmer," emphasizes starting w
 In the context of distributed systems, a Walking Skeleton becomes even more critical because it forces you to address cross-cutting concerns like service communication, deployment pipelines, monitoring, and configuration management from day one. Rather than building these capabilities as an afterthought, you integrate them into your development process from the very beginning.
 
 For this phase, I'll use a Java-based stack with Spring Boot and Gradle as our example, though the principles apply to any technology stack.
+
+## Target System Types
+
+This approach focuses on distributed software systems - applications composed of multiple services that communicate over a network to deliver business value. This includes:
+
+- Microservices architectures: where business capabilities are decomposed into independent services
+- Event-driven systems: that react to and produce events across service boundaries
+- Cloud-native applications: designed to leverage cloud platform capabilities
+- API-first systems: where services expose well-defined interfaces
+
+These systems share common characteristics: they're deployed across multiple processes/machines, they communicate over unreliable networks, they need to handle partial failures gracefully, and they require coordination between autonomous components.
+
+The practices in this guide apply whether you're building a greenfield system or evolving an existing monolith towards a more distributed architecture.
+
+## Key Architectural Decisions
+
+### Monolith First Pattern
+
+When building distributed systems, resist the temptation to immediately decompose into microservices. As {% assign link = site.data.links | where: "id", 10 | first %}[{{ link.author }} describes in his {{ link.title }}]({{ link.link }}) approach, start with a well-structured monolith that can be decomposed later when you better understand the domain boundaries.
+
+#### Why Monolith First?
+
+- Domain understanding: You don't know the right service boundaries until you understand the problem domain
+- Reduced complexity: Avoid distributed system complexity whilst learning the business domain
+- Faster iteration: Changes across service boundaries are expensive in distributed systems
+- Easier refactoring: Moving code within a monolith is simpler than redefining service contracts
+
+#### Implementation approach:
+
+- Design your monolith with clear module boundaries
+- Use packages or modules that could become services later
+- Avoid shared databases between modules
+- Define clear interfaces between modules
+- Test module boundaries with architecture tests (ArchUnit)
+
+### Critical Anti-Pattern: Distributed Monolith
+
+Never build a distributed monolith - this combines the worst aspects of both architectures:
+
+- High coupling: Services that must be deployed together
+- Shared databases: Multiple services accessing the same database tables
+- Synchronous communication: Services blocking on each other for every operation
+- Distributed transactions: Coordinating transactions across service boundaries
+
+#### Warning signs of a distributed monolith:
+
+- Services that always deploy together
+- Cascading failures when one service is down
+- Database tables accessed by multiple services
+- Long chains of synchronous service calls
+- Shared libraries containing business logic
 
 ### Git Repository with Cloud Hosting
 
@@ -450,3 +509,83 @@ class CustomArchitectureTest {
 Architecture tests run as part of our regular test suite and will fail the build if architectural rules are violated, ensuring consistent adherence to our design principles.
 
 This testing strategy ensures that our Walking Skeleton is robust from the beginning and provides confidence for rapid iteration.
+
+## Development Practices
+
+Establishing solid development practices from the beginning ensures team alignment and code quality throughout the project lifecycle.
+
+### Trunk-Based Development
+
+Adopt trunk-based development as your branching strategy:
+
+- Main branch: All developers commit to a single main branch frequently
+- Short-lived branches: Feature branches should live for less than a day
+- Feature flags: Use feature toggles for incomplete features rather than long branches
+- Continuous integration: Every commit triggers automated testing
+
+##### Benefits
+
+- Reduces merge conflicts and integration problems
+- Enables rapid deployment and rollback
+- Forces good testing practices
+- Improves team collaboration
+
+### Environment Strategy
+
+Establish three core environments with clear purposes:
+
+1. Development:
+   - Individual developer environments (local + shared dev)
+   - Latest code changes
+   - Mock external dependencies
+
+2. Staging:
+   - Production-like environment
+   - Integration testing with real dependencies
+   - Pre-production validation
+
+3. Production:
+   - Live system serving users
+   - Monitoring and alerting fully operational
+   - Automated deployment and rollback capabilities
+
+### Performance Testing Environment
+
+Create a dedicated environment that mimics production:
+
+- Infrastructure: Same instance types and network configuration
+- Data volume: Production-like data sets for realistic testing
+- Load patterns: Representative user traffic simulation
+- Monitoring: Same observability stack as production
+
+### Code Review Practices
+
+Implement comprehensive code review processes:
+
+Human Reviews:
+- All code must be reviewed before merging
+- Focus on logic, maintainability, and architectural alignment
+- Review both production and test code with equal rigour
+
+AI-Assisted Reviews:
+- Use tools like GitHub Copilot for initial code suggestions
+- Leverage AI for identifying potential bugs and security issues
+- Maintain human oversight for architectural decisions
+
+### Test Code Quality
+
+Treat test code as production code:
+
+- Apply the same quality standards to test code
+- Refactor test code to eliminate duplication
+- Use descriptive test names and clear assertions
+- Maintain test code with the same rigour as application code
+
+Testing principles:
+
+- Tests should be independent and repeatable
+- Use clear arrange-act-assert structure
+- Mock external dependencies appropriately
+- Maintain good test coverage without obsessing over percentages
+
+This foundation ensures that our Walking Skeleton not only works but can evolve sustainably as the system grows.

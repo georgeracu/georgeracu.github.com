@@ -42,3 +42,8 @@
   author: Donald Knuth
   title: "The Art of Computer Programming"
   link: "https://amzn.to/3XVp8Qg"
+
+- id: 10
+  author: Martin Fowler
+  title: "MonolithFirst"
+  link: "https://martinfowler.com/bliki/MonolithFirst.html"
