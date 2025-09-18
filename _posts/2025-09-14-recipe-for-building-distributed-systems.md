@@ -134,8 +134,11 @@ Not everything needs to be implemented from day one, even though the earlier you
 
 - Do trunk based development;
 - Have 3 development environments: `development`, `staging` and `production`;
-- Have a dedicated performance testing environment that mimicks productions;
+- Have a dedicated performance testing environment that mimicks production;
 - Do code reviews (human and AI assisted);
 - Treat test code as production code;
+- Use commit templates: make sure that your work item number is referenced in every commit (Jira task, GitHub issue etc.)
+- Use `Co-authored-by` when doing pair programming or using an AI coding assistant;
+- Use semantic versioning as described in [SemVer](https://semver.org/);
 
 Future blog posts will explain each phase in more detail.

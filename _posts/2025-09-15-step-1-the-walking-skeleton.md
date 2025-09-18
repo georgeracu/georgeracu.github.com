@@ -588,4 +588,26 @@ Testing principles:
 - Mock external dependencies appropriately
 - Maintain good test coverage without obsessing over percentages
 
+### Commit and Collaboration Practices
+
+Establish clear guidelines for code commits and team collaboration:
+
+#### Commit Templates
+
+- Ensure work item numbers are referenced in every commit (Jira task, GitHub issue etc.)
+- Use consistent commit message formats for better traceability
+- Include context about why changes were made, not just what changed
+
+#### Pair Programming and AI Assistance
+
+- Use `Co-authored-by` when doing pair programming or using an AI coding assistant
+- Give proper attribution to all contributors in commit messages
+- Document AI tool usage for transparency and learning
+
+#### Semantic Versioning
+
+- Use semantic versioning as described in [SemVer](https://semver.org/)
+- Follow MAJOR.MINOR.PATCH versioning convention
+- Increment versions based on the nature of changes (breaking, feature, fix)
+
 This foundation ensures that our Walking Skeleton not only works but can evolve sustainably as the system grows.
