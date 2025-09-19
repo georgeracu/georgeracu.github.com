@@ -1,0 +1,18 @@
+{
+  "name": "Jekyll Blog",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "jekyll",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "ms-vscode.vscode-json",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+  "forwardPorts": [4000],
+  "postCreateCommand": "bundle install"
+}
