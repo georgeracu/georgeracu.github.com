@@ -47,3 +47,43 @@
   author: Martin Fowler
   title: "MonolithFirst"
   link: "https://martinfowler.com/bliki/MonolithFirst.html"
+
+- id: 11
+  author: Docker Inc.
+  title: "Docker - Containerization Platform"
+  link: "https://www.docker.com/"
+
+- id: 12
+  author: Kuma Dev
+  title: "Dockge - Docker Compose Stack Manager"
+  link: "https://dockge.kuma.pet/"
+
+- id: 13
+  author: Tailscale Inc.
+  title: "Tailscale - Zero Config VPN"
+  link: "https://tailscale.com/"
+
+- id: 14
+  author: Microsoft
+  title: "Development Containers Specification"
+  link: "https://containers.dev/"
+
+- id: 15
+  author: Zed Industries
+  title: "Zed - High-Performance Code Editor"
+  link: "https://zed.dev/"
+
+- id: 16
+  author: Microsoft
+  title: "Visual Studio Code"
+  link: "https://code.visualstudio.com/"
+
+- id: 17
+  author: JetBrains
+  title: "IntelliJ IDEA Ultimate"
+  link: "https://www.jetbrains.com/idea/"
+
+- id: 18
+  author: Raspberry Pi Foundation
+  title: "Raspberry Pi 5"
+  link: "https://www.raspberrypi.com/products/raspberry-pi-5/"
