@@ -1,8 +1,16 @@
 {
   "name": "Jekyll Blog",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "jekyll",
-  "workspaceFolder": "/workspace",
+  "build": {
+    "context": "..",
+    "dockerfile": "./Dockerfile"
+  },
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest",
+      "ppa": "false"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
