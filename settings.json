@@ -1,0 +1,5 @@
+{
+    "containers.environment": {
+        "DOCKER_HOST": "ssh://${USER}@${HOST}"
+    }
+}

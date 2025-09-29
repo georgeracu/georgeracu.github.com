@@ -21,6 +21,8 @@
       ]
     }
   },
-  "forwardPorts": [4000],
-  "postCreateCommand": "bundle install"
+  "forwardPorts": [
+    4000
+  ],
+  "postCreateCommand": "bundle install && bundle update"
 }
