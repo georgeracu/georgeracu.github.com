@@ -2,14 +2,22 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
+.red {
+    color: #fa0000;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 body {
-    font-family: 'Droid Serif';
+    font-family: "Droid Serif";
 }
 
 h1,
 h2,
 h3 {
-    font-family: 'Yanone Kaffeesatz';
+    font-family: "Yanone Kaffeesatz";
     font-weight: normal;
 }
 
@@ -17,16 +25,36 @@ img {
     max-width: 100%;
 }
 
-.main-slide {
+/*.main-slide {
     /* background-color: #1a9988; */
     /* color: #fff; */
-}
+}*/
 
 .remark-code,
 .remark-inline-code {
-    font-family: 'Ubuntu Mono';
+    font-family: "Ubuntu Mono";
 }
 
 .remark-code {
     font-size: 1rem;
+}
+
+.remark-slide-content > pre {
+    p,
+    h1 {
+        text-wrap: auto;
+    }
+}
+
+.footnote {
+    position: absolute;
+    bottom: 3em;
+}
+
+.paragraph-color {
+    background-color: (0,0%,96.5%)
+}
+
+.remark-code {
+  font-size: 0.7rem;
 }

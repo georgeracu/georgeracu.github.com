@@ -87,3 +87,83 @@
   author: Raspberry Pi Foundation
   title: "Raspberry Pi 5"
   link: "https://www.raspberrypi.com/products/raspberry-pi-5/"
+
+- id: 19
+  author: JUnit Team
+  title: "JUnit 5 User Guide"
+  link: "https://junit.org/junit5/docs/current/user-guide/"
+
+- id: 20
+  author: Mockito Team
+  title: "Mockito Framework"
+  link: "https://site.mockito.org/"
+
+- id: 21
+  author: TestContainers
+  title: "TestContainers Documentation"
+  link: "https://java.testcontainers.org/"
+
+- id: 22
+  author: AssertJ Team
+  title: "AssertJ Documentation"
+  link: "https://assertj.github.io/doc/"
+
+- id: 23
+  author: Martin Fowler
+  title: "Test Double"
+  link: "https://martinfowler.com/bliki/TestDouble.html"
+
+- id: 24
+  author: Martin Fowler
+  title: "Mocks Aren't Stubs"
+  link: "https://martinfowler.com/articles/mocksArentStubs.html"
+
+- id: 25
+  author: Mockito Team
+  title: "Mockito Javadoc Documentation"
+  link: "https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html"
+
+- id: 26
+  author: Robert C. Martin
+  title: "The Clean Code Blog - Test Definitions"
+  link: "https://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.html"
+
+- id: 27
+  author: Vladimir Khorikov
+  title: "Unit Testing Principles, Practices, and Patterns"
+  link: "#"
+
+- id: 28
+  author: Steve Freeman & Nat Pryce
+  title: "Growing Object-Oriented Software, Guided by Tests"
+  link: "#"
+
+- id: 29
+  author: Kent Beck
+  title: "Test-Driven Development: By Example"
+  link: "#"
+
+- id: 30
+  author: LocalStack
+  title: "LocalStack - Local AWS Cloud Stack"
+  link: "https://localstack.cloud/"
+
+- id: 31
+  author: WireMock
+  title: "WireMock - API Mocking Framework"
+  link: "https://wiremock.org/"
+
+- id: 32
+  author: Gradle
+  title: "Gradle Testing in Java & JVM projects"
+  link: "https://docs.gradle.org/current/userguide/java_testing.html"
+
+- id: 33
+  author: Maven
+  title: "Maven Surefire Plugin"
+  link: "https://maven.apache.org/surefire/maven-surefire-plugin/"
+
+- id: 34
+  author: Maven
+  title: "Maven Failsafe Plugin"
+  link: "https://maven.apache.org/surefire/maven-failsafe-plugin/"
