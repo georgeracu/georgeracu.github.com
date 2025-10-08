@@ -232,3 +232,23 @@
   author: Wikipedia
   title: "Builder Pattern"
   link: "https://en.wikipedia.org/wiki/Builder_pattern"
+
+- id: 48
+  author: Haskell.org
+  title: "Maybe Type in Haskell"
+  link: "https://wiki.haskell.org/Maybe"
+
+- id: 49
+  author: Scala
+  title: "Option Type in Scala"
+  link: "https://www.scala-lang.org/api/2.13.6/scala/Option.html"
+
+- id: 50
+  author: Oracle
+  title: "Value-Based Classes Documentation"
+  link: "https://docs.oracle.com/javase/8/docs/api/java/lang/doc-files/ValueBased.html"
+
+- id: 51
+  author: Brian Goetz
+  title: "Optional - The Mother of All Bikesheds"
+  link: "https://blog.joda.org/2015/08/java-se-8-optional-pragmatic-approach.html"

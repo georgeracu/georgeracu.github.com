@@ -6,4 +6,4 @@ tags: [java, optional, clean code, presentation]
 description: A presentation on Java's Optional, how and when to use it and some common anti-patterns
 ---
 
-<pre>{% include presentations/curse-of-optional.md %}</pre>
+<pre>{% include presentations/007-curse-of-optional.md %}</pre>
