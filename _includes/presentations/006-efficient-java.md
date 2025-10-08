@@ -113,7 +113,8 @@ public final class Hotel {
 
 * Impossible to change an `immutable object` (**reflection** not considered here), therefore we create a new one
 
-* [Lombok](https://projectlombok.org/) to the rescue with `@Builder` annotation
+{% assign lombok_link = site.data.links | where: "id", 40 | first %}
+* [{{ lombok_link.title }}]({{ lombok_link.link }}) to the rescue with `@Builder` annotation
 
 * Creating new objects is cheap in resource consumption (for our use case)
 
@@ -142,6 +143,17 @@ public class Hotel {
     // The content of the class remains the same as before
 
 }
+// How to use it
+{
+    var myHotel = Hotel.builder()
+        .name("George's fancy hotel")
+        .build();
+
+    // I sold my hotel
+    var notMyHotel = myHotel.toBuilder()
+        .name("Jim's hotel")
+        .build();
+}
 ```
 
 ---
@@ -155,7 +167,7 @@ Changing internal state of an immutable object is impossible
 Assuming that we need to change a hotel's address, we need to create a new `Hotel` object with the new address and all other fields of the existing one that we are updating
 
 ```java
-private final Hotel awesomeHotel = 
+private final Hotel awesomeHotel =
     new Hotel("My Awesome hotel", Address.defaultAddress());
 
 public Hotel moveAddress(final Hotel hotel, final Address address) {
@@ -164,7 +176,7 @@ public Hotel moveAddress(final Hotel hotel, final Address address) {
                     .build();
 }
 
-private final Address newAddress = 
+private final Address newAddress =
     new Address("ugly city", "ugly street");
 
 private final Hotel uglyHotel = moveAddress(awesomeHotel, newAddress);
@@ -174,7 +186,7 @@ private final Hotel uglyHotel = moveAddress(awesomeHotel, newAddress);
 
 # Pitfalls
 
-<hr>
+<hr/>
 
 One might say that object Hotel is not completely immutable
 
@@ -194,6 +206,7 @@ public final class Address {
 
     public String getCity() { return this.city; }
     public String getStreet() { return this.street; }
+    // This setter makes the class mutable
     public void setCity(final String city) { this.city = city; }
 
     public static Address defaultAddress() {
@@ -211,7 +224,7 @@ public final class Address {
 Consider this code
 
 ```java
-private final Hotel awesomeHotel = 
+private final Hotel awesomeHotel =
     new Hotel("My Awesome hotel", Address.defaultAddress());
 
 private final Address originalAddress = awesomeHotel.getAddress();
@@ -238,7 +251,8 @@ In previous examples all classes are marked with `final`.
 
 By default, classes should be final (Kotlin got the point).
 
-When we intend to let classes open for inheritance, we should document it. Joshua Bloch explains this term very well in his excellent book [Effective Java, 3rd edition](https://www.amazon.co.uk/Effective-Java-Joshua-Bloch-ebook/dp/B078H61SCH/ref=sr_1_1?_encoding=UTF8&keywords=Effective+Java&qid=1649185785&s=digital-text&sr=1-1), item 19.
+When we intend to let classes open for inheritance, we should document it. {% assign effective_java_link = site.data.links | where: "id", 41 | first %}
+Joshua Bloch explains this term very well in his excellent book [{{ effective_java_link.title }}]({{ effective_java_link.link }}), item 19.
 
 ```java
 /*
@@ -271,7 +285,7 @@ private final Hotel boringHotel =
     new Hotel("My Boring hotel", Address.defaultAddress());
 
 /*
-* When trying to make a boring hotel awesome, will throw a compilation error as variable 
+* When trying to make a boring hotel awesome, will throw a compilation error as variable
 * "boringHotel" cannot be re-assigned
 */
 boringHotel = new Hotel("My Awesome hotel", Address.defaultAddress());
@@ -311,11 +325,11 @@ someList = Collections.unmodifiableList(List.of("Dad"));
 ```java
 // elements of an unmodifiable collection cannot be changed
 public static String someMethod() {
-    
+
     final List<String> someList = Collections.unmodifiableList(List.of("Mom"));
 
-    /* 
-    * this operation is will throw an error: 
+    /*
+    * this operation will throw an error:
     * cannot assign a value to final variable someList
     */
     someList = Collections.unmodifiableList(List.of("Dad"));
@@ -339,12 +353,14 @@ A Java Record provides:
 * `hashCode()` and `equals()`
 * A public constructor with all fields
 
-Some might argue that this functionality can be accomplished by using [Lombok](https://projectlombok.org/), or, on a more drastic note, by switching to [Kotlin](https://kotlinlang.org/). I would agree that Java needs to evolve, and this is a sign that things are getting better.
+{% assign lombok_link = site.data.links | where: "id", 40 | first %}
+{% assign kotlin_link = site.data.links | where: "id", 46 | first %}
+Some might argue that this functionality can be accomplished by using [{{ lombok_link.title }}]({{ lombok_link.link }}), or, on a more drastic note, by switching to [{{ kotlin_link.title }}]({{ kotlin_link.link }}). I would agree that Java needs to evolve, and this is a sign that things are getting better.
 
 Let's focus on the advantages brought for immutability: no `setters` on an object
 
 ```java
-public Record Hotel(String name, Address address){}
+public record Hotel(String name, Address address) {}
 ```
 
 How simple is that?
@@ -372,7 +388,9 @@ In your terminal you should see compiler's magic:
 
 ## Combining Records with the Builder pattern
 
-When using immutable objects it becomes pretty hard to change a field and to create a new object with the rest of the fields having the same values. The [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern) can be used by using [Lombok](https://projectlombok.org/)'s annotation `@Builder(toBuilder=true)`.
+{% assign builder_pattern_link = site.data.links | where: "id", 47 | first %}
+{% assign lombok_link = site.data.links | where: "id", 40 | first %}
+When using immutable objects it becomes pretty hard to change a field and to create a new object with the rest of the fields having the same values. The [{{ builder_pattern_link.title }}]({{ builder_pattern_link.link }}) can be used by using [{{ lombok_link.title }}]({{ lombok_link.link }})'s annotation `@Builder(toBuilder=true)`.
 
 ```java
 public Record Hotel(String name, Address address) {
@@ -398,7 +416,30 @@ var renamedHotel = myHotel.toBuilder.name("Marvelous Hotel").build();
 * Do not provide direct access to mutable fields via accessors
 * Use defensive copies in field instantiation: constructors
 
-_WIP_
+### Example: Defensive Copying
+
+```java
+public final class Hotel {
+    private final String name;
+    private final List<Room> rooms;
+
+    public Hotel(String name, List<Room> rooms) {
+        this.name = name;
+        // Defensive copy to prevent external modification
+        this.rooms = Collections.unmodifiableList(new ArrayList<>(rooms));
+    }
+
+    public List<Room> getRooms() {
+        // Return defensive copy to prevent external modification
+        return new ArrayList<>(rooms);
+    }
+}
+```
+
+**Why defensive copies?**
+* Prevents external code from modifying internal state
+* Maintains true immutability even with mutable field types
+* Essential when dealing with collections or mutable objects
 
 ---
 
@@ -479,12 +520,98 @@ public class Hotel {
 }
 
 // as a record
-public Record Hotel(String name) {
+@Builder(toBuilder=true)
+public record Hotel(String name) {
+    // Note: Records with @Builder require careful setup
+}
+```
 
-    @Builder(toBuilder=true)
-    public Hotel() {
-        // constructor required for @Builder annotation
+---
+
+## When NOT to Use Immutability
+
+<hr/>
+
+### Performance-Critical Scenarios
+
+```java
+// Inefficient for frequent modifications
+StringBuilder result = new StringBuilder();
+for (int i = 0; i < 1000; i++) {
+    String temp = result.toString(); // Creates new String
+    result = new StringBuilder(temp + i); // Inefficient
+}
+
+// Use mutable types for accumulation
+StringBuilder result = new StringBuilder();
+for (int i = 0; i < 1000; i++) {
+    result.append(i); // Modifies existing buffer
+}
+```
+
+### When Working with Large Data Sets
+
+* Copying large objects can be expensive
+* Consider using immutable wrappers around mutable internals
+* Use lazy evaluation patterns when appropriate
+
+---
+
+## Best Practices Summary
+
+<hr/>
+
+### Do This
+
+* Make classes `final` by default
+* Use `final` for all fields
+* Provide no setters
+* Use defensive copying for mutable fields
+* Prefer composition over inheritance
+* Use builder pattern for complex objects
+
+### Avoid This
+
+* Public mutable fields
+* Setters on immutable objects
+* Sharing mutable references
+* Deep object hierarchies
+* Premature optimisation concerns
+
+---
+
+## Modern Java Features for Immutability
+
+<hr/>
+
+### Text Blocks (Java 15+)
+
+```java
+public record ErrorMessage(String code, String details) {
+    public String toJson() {
+        return """
+            {
+                "errorCode": "%s",
+                "details": "%s"
+            }
+            """.formatted(code, details);
     }
+}
+```
+
+### Pattern Matching (Java 17+)
+
+```java
+public sealed interface Result permits Success, Failure {
+    record Success(String value) implements Result {}
+    record Failure(String error) implements Result {}
+}
+
+public String processResult(Result result) {
+    return switch (result) {
+        case Success(var value) -> "Success: " + value;
+        case Failure(var error) -> "Error: " + error;
+    };
 }
 ```
 
@@ -494,11 +621,17 @@ public Record Hotel(String name) {
 
 <hr/>
 
-* [Effective Java, 3rd edition](https://amzn.to/3EVK9vI)
-* [Java Concurrency in Practice](https://amzn.to/3EMONfE)
-* [Functional Programming for Java Developers](https://amzn.to/3UnjTA4)
-* [Functional Programming in Java](https://amzn.to/3XKaSnL)
-* [Design Patterns: Elements of Reusable Object-Oriented Software](https://amzn.to/3XPorCk)
+{% assign effective_java_link = site.data.links | where: "id", 41 | first %}
+{% assign concurrency_link = site.data.links | where: "id", 42 | first %}
+{% assign fp_dev_link = site.data.links | where: "id", 43 | first %}
+{% assign fp_java_link = site.data.links | where: "id", 44 | first %}
+{% assign design_patterns_link = site.data.links | where: "id", 45 | first %}
+
+* [{{ effective_java_link.title }}]({{ effective_java_link.link }})
+* [{{ concurrency_link.title }}]({{ concurrency_link.link }})
+* [{{ fp_dev_link.title }}]({{ fp_dev_link.link }})
+* [{{ fp_java_link.title }}]({{ fp_java_link.link }})
+* [{{ design_patterns_link.title }}]({{ design_patterns_link.link }})
 
 ---
 

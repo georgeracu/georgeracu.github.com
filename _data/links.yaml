@@ -192,3 +192,43 @@
   author: Mahmoud Ben Hassine
   title: "EasyRandom - Object Generation Library"
   link: "https://github.com/j-easy/easy-random"
+
+- id: 40
+  author: Project Lombok
+  title: "Lombok - Java Library for Reducing Boilerplate"
+  link: "https://projectlombok.org/"
+
+- id: 41
+  author: Joshua Bloch
+  title: "Effective Java, 3rd Edition"
+  link: "https://amzn.to/3EVK9vI"
+
+- id: 42
+  author: Brian Goetz
+  title: "Java Concurrency in Practice"
+  link: "https://amzn.to/3EMONfE"
+
+- id: 43
+  author: Dean Wampler
+  title: "Functional Programming for Java Developers"
+  link: "https://amzn.to/3UnjTA4"
+
+- id: 44
+  author: Venkat Subramaniam
+  title: "Functional Programming in Java"
+  link: "https://amzn.to/3XKaSnL"
+
+- id: 45
+  author: Gang of Four
+  title: "Design Patterns: Elements of Reusable Object-Oriented Software"
+  link: "https://amzn.to/3XPorCk"
+
+- id: 46
+  author: JetBrains
+  title: "Kotlin Programming Language"
+  link: "https://kotlinlang.org/"
+
+- id: 47
+  author: Wikipedia
+  title: "Builder Pattern"
+  link: "https://en.wikipedia.org/wiki/Builder_pattern"
