@@ -167,3 +167,28 @@
   author: Maven
   title: "Maven Failsafe Plugin"
   link: "https://maven.apache.org/surefire/maven-failsafe-plugin/"
+
+- id: 35
+  author: Nicole Forsgren, Jez Humble, Gene Kim
+  title: "Accelerate: The Science of Lean Software and DevOps"
+  link: "https://amzn.to/3XPnyK0"
+
+- id: 36
+  author: Martin Fowler
+  title: "Construction Builder Pattern"
+  link: "https://martinfowler.com/dslCatalog/constructionBuilder.html"
+
+- id: 37
+  author: Ward Cunningham & Kent Beck
+  title: "Wishful Thinking Programming Pattern"
+  link: "https://wiki.c2.com/?WishfulThinking"
+
+- id: 38
+  author: Martin Fowler
+  title: "Object Mother Pattern"
+  link: "https://martinfowler.com/bliki/ObjectMother.html"
+
+- id: 39
+  author: Mahmoud Ben Hassine
+  title: "EasyRandom - Object Generation Library"
+  link: "https://github.com/j-easy/easy-random"

@@ -88,14 +88,14 @@
 <hr/>
 
 * Defined using annotation `@RestController`
-* Contains annotations from several libraries for: 
+* Contains annotations from several libraries for:
   * Payload validation `@Valid`
   * Resource URL mapping `@GetMapping`
   * Ocasional Lombok's `@RequiredArgsConstructor`
   * Loggers `@Slf4j`
   * Security `@RolesAllowed`
   * etc.
-* Responsibilities: 
+* Responsibilities:
   * Mapping incoming requests to handler methods
   * Perform payload validation at the edge of the microservice
   * Autowire dependencies: inject objects and fields
@@ -279,7 +279,7 @@ public class GetRoomsUseCaseImpl implements GetRoomsUseCase {
 class GetRoomsUseCaseTest {
     private GetRoomsUseCase sut;
     private final RoomsRepository repository = Mockito.mock(RoomsRepository.class);
-    
+
     @BeforeEach
     void setup() {
         sut = new GetRoomsUseCaseImpl(repository);
@@ -487,7 +487,7 @@ class RoomEntityToRoomTest {
 * The configuration for the circuit breaker and retries require some annotation magic
 * While a unit test might be enough to test the client, it requires the application context for the annotations to work
 * The following example uses [Resilience4J](https://resilience4j.readme.io/docs) to configure a client
-* This is heavier test than usual, I haven't found a way to avoid wiring (mostly) the entire application 
+* This is heavier test than usual, I haven't found a way to avoid wiring (mostly) the entire application
 
 ---
 
@@ -520,11 +520,77 @@ class RoomEntityToRoomTest {
 
 <hr/>
 
-To do: 
+To do:
 * show the testing pyramid with the current tests at each layer: many unit tests at the botttom and fewer tests as we go up
 * write an integration test for testing the happy path and show how everything is wired together and working
 * show that edge cases, exceptions, anything than the happy path are tested with unit tests, in their layer, and not tested as integration tests because: slow, hard to setup, not actually testing integration of components.
 * Integration testing is actually testing happy paths and making sure that they work as expected
+
+---
+
+## The Test Pyramid in Practice
+
+<hr/>
+
+**Unit Tests (70%)**
+- Fast execution (milliseconds)
+- Run in paralel
+- Test individual components in isolation
+- Mock external dependencies
+- High code coverage
+
+**Integration Tests (20%)**
+- Test component interactions
+- Use real implementations where possible
+- Test database interactions, APIs
+- Moderate execution time
+
+**End-to-End Tests (10%)**
+- Test complete user journeys
+- Slow but high confidence
+- Test critical business flows only
+- Use sparingly
+
+---
+
+## Key Testing Principles
+
+<hr/>
+
+### F.I.R.S.T. Principles
+
+- **Fast** - Tests should run quickly
+- **Independent** - Tests should not depend on each other
+- **Repeatable** - Tests should produce consistent results
+- **Self-Validating** - Tests should have clear pass/fail results
+- **Timely** - Tests should be written just before production code
+
+### AAA Pattern
+
+- **Arrange** - Set up test data and preconditions
+- **Act** - Execute the method under test
+- **Assert** - Verify the expected outcome
+
+---
+
+## Testing Anti-Patterns to Avoid
+
+<hr/>
+
+### Testing Implementation Details
+
+- Don't test private methods directly
+- Test behaviour through public interfaces
+
+### Excessive Mocking
+
+- Mocking value objects or data structures
+- Mock only dependencies with side effects
+
+### Brittle Tests
+
+- Tests that break when refactoring without changing behaviour
+- Tests that focus on outcomes, not implementation
 
 ---
 

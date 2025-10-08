@@ -20,11 +20,23 @@
 It is interesting to note that having automated tests primarily created and maintained either by QA or an outsourced party is not correlated with IT performance.
 
 The theory behind this is that when developers are involved in creating and maintaining acceptance tests, there are two important effects. First, the code becomes more testable when developers write tests. This is one of the main reasons why test-driven development (TDD) is an important practice‚ as it forces developers to create more testable designs. Second, when developers are responsible for the automated tests, they care more about them and will invest more effort into maintaining and fixing them.
+]
 
+{% assign accelerate_link = site.data.links | where: "id", 35 | first %}
+.footnote[.red[*] See [{{ accelerate_link.title }}]({{ accelerate_link.link }})]
+
+---
+
+## What about QAs and Testers?
+
+<hr/>
+
+.fst-italic[
 None of this means that we should be getting rid of testers. Testers serve an essential role in the software delivery lifecycle, performing manual testing such as exploratory, usability, and acceptance testing, and helping to create and evolve suites of automated tests by working alongside developers.
 ]
 
-[Accelerate](https://amzn.to/3XPnyK0) - on high performing teams.
+{% assign accelerate_link = site.data.links | where: "id", 35 | first %}
+.footnote[.red[*] See [{{ accelerate_link.title }}]({{ accelerate_link.link }})]
 
 ---
 
@@ -39,7 +51,8 @@ None of this means that we should be getting rid of testers. Testers serve an es
 * It will _force_ us to:
     * Replace field injection with constructor injection
     * Add `equals()` and `hashCode()` on objects when we need to compare equality
-    * Use the [construction builder](https://martinfowler.com/dslCatalog/constructionBuilder.html) pattern for a more fluent syntax
+{% assign builder_link = site.data.links | where: "id", 36 | first %}
+    * Use the [construction builder]({{ builder_link.link }}) pattern for a more fluent syntax
     * Think in small increments and small units (small methods and classes)
 
 ---
@@ -50,6 +63,8 @@ None of this means that we should be getting rid of testers. Testers serve an es
 
 ### First user story
 
+**Feature:** Hotel Management System<br/>
+**Scenario:** A hotel owner can see all rooms<br/>
 Given a hotel owner<br>
 When I query the API for all my rooms<br>
 Then I should get a list with all rooms
@@ -77,13 +92,18 @@ Then I should get a list with all rooms
 
 <hr/>
 
-### Apply [wishful thinking](https://wiki.c2.com/?WishfulThinking)
+### Apply Wishful Thinking
 
 .fst-italic[
 .text-muted[
-Before implementing a component you write some of the code that actually uses it. This way you discover what functions with what parameters you really need, which leads to a very good interface. You will also have some good test code for your component. 
+Before implementing a component you write some of the code that actually uses it.<br/>
+This way you discover what functions with what parameters you really need, which leads to a very good interface.<br/>
+You will also have some good test code for your component.
 ]
 ]
+
+{% assign wishful_link = site.data.links | where: "id", 37 | first %}
+.footnote[.red[*] See [{{ wishful_link.title }}]({{ wishful_link.link }})]
 
 ---
 
@@ -173,9 +193,55 @@ For this layer we write enough code just to make it compile. No logic should be 
 
 ```java
 public final class GetRoomsUseCaseImpl {
-    
+
     public List<Room> execute() {
         return null;
+    }
+}
+```
+
+---
+
+## Finding Seams in Legacy Code
+
+<hr/>
+
+A **seam** is a place where you can alter behaviour in your programme without editing in that place.
+
+### Types of Seams:
+
+* **Object seams** - Places where you can substitute one object for another
+* **Compile seams** - Places where you can swap in different implementations at compile time
+* **Link seams** - Places where you can substitute different libraries or modules
+
+---
+
+### Example: Adding a seam
+
+<hr/>
+
+#### Before - tightly coupled, hard to test
+
+```java
+public class OrderService {
+    public void processOrder(Order order) {
+        EmailSender.sendConfirmation(order.getCustomerEmail());
+    }
+}
+```
+
+#### After - with seam, easy to test
+
+```java
+public class OrderService {
+    private final EmailSender emailSender;
+
+    public OrderService(EmailSender emailSender) {
+        this.emailSender = emailSender;
+    }
+
+    public void processOrder(Order order) {
+        emailSender.sendConfirmation(order.getCustomerEmail());
     }
 }
 ```
@@ -226,12 +292,47 @@ class HotelServiceTest {
         // arrange
 
         // act
-        sut.createHotel()
+        final Hotel hotel = HotelMother.aHotel();
+        sut.createHotel(hotel);
 
         // assert
+        verify(hotelRepository).save(any(HotelEntity.class));
+        verify(messagePublisher).publish(hotel);
     }
 }
 ```
+
+---
+
+## Test Data Builders vs Object Mothers
+
+<hr/>
+
+### Test Data Builder Pattern
+
+```java
+public class HotelBuilder {
+    private String name = "Default Hotel";
+    private String address = "Default Address";
+    private int stars = 3;
+
+    public HotelBuilder withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public HotelBuilder withStars(int stars) {
+        this.stars = stars;
+        return this;
+    }
+
+    public Hotel build() {
+        return new Hotel(name, address, stars);
+    }
+}
+```
+
+Usage: `Hotel hotel = new HotelBuilder().withName("Luxury Hotel").withStars(5).build();`
 
 ---
 
@@ -243,11 +344,110 @@ Martin Fowler on Object mothers:
 
 _An object mother is a kind of class used in testing to help create example objects that you use for testing._
 
-From [martinfowler.com](https://martinfowler.com/bliki/ObjectMother.html)
+{% assign object_mother_link = site.data.links | where: "id", 38 | first %}
+From [{{ object_mother_link.title }}]({{ object_mother_link.link }})
 
-This type of object factories are very useful when you need to generate objects for test. 
+This type of object factories are very useful when you need to generate objects for test.
 
-A library that helps with creating objects populated with random data based on field type is [EasyRandom](https://github.com/j-easy/easy-random)
+{% assign easy_random_link = site.data.links | where: "id", 39 | first %}
+A library that helps with creating objects populated with random data based on field type is [{{ easy_random_link.title }}]({{ easy_random_link.link }})
+
+---
+
+### Object Mother Example
+
+<hr/>
+
+```java
+public class HotelMother {
+    public static Hotel aHotel() {
+        return Hotel.builder()
+                .name("Grand Hotel")
+                .address("123 Main Street")
+                .stars(4)
+                .build();
+    }
+
+    public static Hotel aLuxuryHotel() {
+        return aHotel().toBuilder()
+                .name("Luxury Resort")
+                .stars(5)
+                .build();
+    }
+
+    public static Hotel aBudgetHotel() {
+        return aHotel().toBuilder()
+                .name("Budget Inn")
+                .stars(2)
+                .build();
+    }
+}
+```
+
+---
+
+## Test Naming Conventions
+
+<hr/>
+
+### Good test names tell a story
+
+```java
+@Test
+void test1() { ... }
+
+@Test
+void testCreateHotel() { ... }
+```
+
+#### Better naming
+
+```java
+@Test
+void shouldReturnEmptyListWhenNoHotelsExist() { ... }
+
+@Test
+void shouldThrowExceptionWhenHotelNameIsNull() { ... }
+
+@Test
+void shouldPublishMessageWhenHotelIsCreatedSuccessfully() { ... }
+```
+
+**Pattern:** `should[ExpectedBehaviour]When[StateUnderTest]`
+
+This makes tests self-documenting and easier to understand when they fail.
+
+---
+
+## Practical Refactoring Techniques
+
+<hr/>
+
+### Replace `new` with constructor injection:
+
+```java
+// Before
+public class EmailService {
+    public void sendWelcome(User user) {
+        SmtpClient client = new SmtpClient(); // Hard to test
+        client.send(user.getEmail(), "Welcome!");
+    }
+}
+
+// After
+public class EmailService {
+    private final SmtpClient smtpClient;
+
+    public EmailService(SmtpClient smtpClient) {
+        this.smtpClient = smtpClient;
+    }
+
+    public void sendWelcome(User user) {
+        smtpClient.send(user.getEmail(), "Welcome!");
+    }
+}
+```
+
 ---
 
 ## Lessons learned
