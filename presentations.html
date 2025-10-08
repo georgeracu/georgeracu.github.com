@@ -1,0 +1,37 @@
+---
+layout: default
+title: Presentations
+permalink: /presentations/
+---
+
+{% assign presentation_posts = site.posts | where: "layout", "presentation" %}
+
+<div class="home">
+    <h1 class="page-heading">Presentations</h1>
+
+    <p>
+        A collection of my technical presentations on software development,
+        testing, and engineering practices.
+    </p>
+
+    {% if presentation_posts.size > 0 %}
+    <div class="presentation-list">
+        <div class="presentation-category">
+            <h2>Presentations ({{ presentation_posts.size }})</h2>
+            <ul>
+                {% assign sorted_posts = presentation_posts | sort: 'date' |
+                reverse %} {% for post in sorted_posts %}
+                <li>
+                    <a href="{{ post.permalink | default: post.url }}"
+                        >{{ post.title }}</a
+                    >
+                    <small>({{ post.date | date: "%Y" }})</small>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% else %}
+    <p>No presentations found.</p>
+    {% endif %}
+</div>
