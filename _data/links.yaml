@@ -252,3 +252,28 @@
   author: Brian Goetz
   title: "Optional - The Mother of All Bikesheds"
   link: "https://blog.joda.org/2015/08/java-se-8-optional-pragmatic-approach.html"
+
+- id: 52
+  author: Ole Petter Bang
+  title: "RemarkJS - Markdown-driven Slideshow Tool"
+  link: "https://remarkjs.com/"
+
+- id: 53
+  author: Jekyll Team
+  title: "Jekyll - Static Site Generator"
+  link: "https://jekyllrb.com/"
+
+- id: 54
+  author: GitHub
+  title: "GitHub Pages Documentation"
+  link: "https://pages.github.com/"
+
+- id: 55
+  author: Google
+  title: "Google Fonts"
+  link: "https://fonts.google.com/"
+
+- id: 56
+  author: Mozilla
+  title: "MDN - CSS Documentation"
+  link: "https://developer.mozilla.org/en-US/docs/Web/CSS"
