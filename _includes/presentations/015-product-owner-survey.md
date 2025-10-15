@@ -16,7 +16,7 @@
 
 <hr/>
 
-"Success is a lousy teacher. It seduces smart people into thinking they can't lose." - Bill Gates
+"Hard work will not ensure quality. Best efforts will not ensure quality, and neither will gadgets, computers or investment in machinery. A necessary ingredient for improvement of quality is the application of profound knowledge. There is no substitute for knowledge. Knowledge we have in abundance. We must learn to use it." - Deming, W. Edwards
 
 ---
 
