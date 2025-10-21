@@ -277,3 +277,73 @@
   author: Mozilla
   title: "MDN - CSS Documentation"
   link: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+
+- id: 57
+  author: OpenAPI Initiative
+  title: "OpenAPI Specification"
+  link: "https://spec.openapis.org/oas/latest.html"
+
+- id: 58
+  author: SmartBear
+  title: "Swagger UI - Interactive API Documentation"
+  link: "https://swagger.io/tools/swagger-ui/"
+
+- id: 59
+  author: Redocly
+  title: "ReDoc - OpenAPI Documentation Generator"
+  link: "https://redocly.com/redoc/"
+
+- id: 60
+  author: Spring
+  title: "Spring Cloud Contract"
+  link: "https://spring.io/projects/spring-cloud-contract"
+
+- id: 61
+  author: Pact Foundation
+  title: "Pact - Consumer-Driven Contract Testing"
+  link: "https://pact.io/"
+
+- id: 62
+  author: Oracle
+  title: "Bean Validation (Jakarta Validation)"
+  link: "https://beanvalidation.org/"
+
+- id: 63
+  author: IETF
+  title: "RFC 7231 - HTTP/1.1 Semantics and Content"
+  link: "https://datatracker.ietf.org/doc/html/rfc7231"
+
+- id: 64
+  author: Roy Fielding
+  title: "REST APIs must be hypertext-driven"
+  link: "https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven"
+
+- id: 65
+  author: Martin Fowler
+  title: "Richardson Maturity Model"
+  link: "https://martinfowler.com/articles/richardsonMaturityModel.html"
+
+- id: 66
+  author: Oracle
+  title: "Java Records Documentation"
+  link: "https://docs.oracle.com/en/java/javase/17/language/records.html"
+
+- id: 67
+  author: IETF
+  title: "RFC 7234 - HTTP Caching"
+  link: "https://datatracker.ietf.org/doc/html/rfc7234"
+
+- id: 68
+  author: IETF
+  title: "RFC 6585 - Additional HTTP Status Codes"
+  link: "https://datatracker.ietf.org/doc/html/rfc6585"
+
+- id: 69
+  author: Ben Stopford
+  title: "Versioning in an Event Sourced System"
+  link: "https://www.confluent.io/blog/event-sourcing-vs-event-streaming/"
+
+- id: 70
+  author: Microsoft
+  title: "API Versioning Guidelines"
+  link: "https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#12-versioning"
