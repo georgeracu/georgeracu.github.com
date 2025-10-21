@@ -87,17 +87,23 @@ Consider this code snippet
 
 ```java
 public record VehicleIdentificationNumber(String value) {
-    
+
     private static final int VALUE_LENGTH = 17;
-    
+
     public VehicleIdentificationNumber(final String value) {
         validateLengthOrThrow(value);
         this.value = value;
     }
 
     private void validateLengthOrThrow(final String input) {
-        if (input != null && input.length() != VALUE_LENGTH) {
-            throw new InvalidVINException("VIN length should be ".concat(VALUE_LENGTH));
+        if (input == null) {
+            throw new InvalidVINException("VIN cannot be null");
+        }
+        if (input.length() != VALUE_LENGTH) {
+            throw new InvalidVINException("VIN length should be " + VALUE_LENGTH);
+        }
+        if (!input.matches("[A-HJ-NPR-Z0-9]{17}")) {
+            throw new InvalidVINException("VIN contains invalid characters");
         }
     }
 }
@@ -164,6 +170,39 @@ Validated when we built the record, we know that there will always be a value wi
 * Equality is computed against the value held and not against instance
 * Two objects holding the same value are said to be same
 * Java Records implement `equals()` and `hashCode()` for us
+
+---
+
+# Immutability Benefits
+
+<hr />
+
+### Why Value Objects should be immutable
+
+* **Thread Safety** - Immutable objects can be safely shared between threads without synchronisation
+* **Predictable Behaviour** - Once created, the value never changes, making code easier to reason about
+* **Caching & Reuse** - Safe to cache and reuse instances without defensive copying
+* **Hashcode Stability** - Can be safely used as HashMap keys since their hashcode never changes
+* **Simpler Debugging** - No unexpected state changes to track down
+
+Java Records are immutable by default, making them perfect for Value Objects
+
+---
+
+# Summary
+
+<hr />
+
+### Key Takeaways
+
+* **Value Objects** encapsulate domain concepts that are defined by their value, not their identity
+* **Keep data and behaviour together** to avoid anemic domain models
+* **Validation at construction** ensures objects are always in a valid state
+* **Equality by value** allows meaningful comparisons and safe usage in collections
+* **Immutability** provides thread safety, predictability, and simplifies reasoning about code
+* **Java Records** provide an excellent foundation for implementing Value Objects
+
+Use Value Objects to make your domain model more expressive and maintainable
 
 ---
 
