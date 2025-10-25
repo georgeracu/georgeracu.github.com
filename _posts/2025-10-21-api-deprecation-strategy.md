@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HTTP API Deprecation Strategy"
-tags: [versioning, best-practices, design-patterns, deprecation-strategy, api]
+tags: [versioning, best-practices, deprecation-strategy, api]
 permalink: /blog/articles/http-api-deprecation-strategy/
 description: "Comprehensive guide to plan and implement a deprecation strategy for HTTP APIs."
 mathjax: false
@@ -27,13 +27,15 @@ Effective API version monitoring requires tracking multiple dimensions of usage:
 
 Create dedicated dashboards that visualise version adoption to inform migration decisions:
 
-**Key visualisations:**
+#### Key visualisations
+
 - **Version distribution pie chart**: Percentage of traffic by version
 - **Version adoption timeline**: Stacked area chart showing version usage over time
 - **Client migration status**: Table showing which clients are on which versions
 - **Deprecation readiness**: Percentage of clients still on deprecated versions
 
-**Decision criteria for sunsetting versions:**
+#### Decision criteria for sunsetting versions
+
 - Less than 5% of total traffic uses the deprecated version
 - Less than 3 active clients remain on the version
 - All high-value clients have migrated
@@ -100,7 +102,8 @@ A typical API version migration follows a multi-phase approach spanning 12-18 mo
 
 Effective communication is as critical as technical execution. Clients need advance notice, clear guidance, and ongoing support:
 
-**Announcement channels:**
+#### Announcement channels
+
 - API changelog and release notes
 - Developer newsletter or mailing list
 - API status page with migration timeline
@@ -108,7 +111,8 @@ Effective communication is as critical as technical execution. Clients need adva
 - In-dashboard notifications (if applicable)
 - Deprecation headers in API responses
 
-**Documentation requirements:**
+#### Documentation requirements
+
 - High-level summary of changes
 - Detailed endpoint-by-endpoint comparison
 - Code examples showing before/after patterns
