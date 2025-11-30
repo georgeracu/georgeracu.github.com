@@ -347,3 +347,133 @@
   author: Microsoft
   title: "API Versioning Guidelines"
   link: "https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#12-versioning"
+
+- id: 71
+  author: AWS
+  title: "AWS Lambda - Serverless Compute"
+  link: "https://aws.amazon.com/lambda/"
+
+- id: 72
+  author: AWS
+  title: "Lambda Deployment Packages"
+  link: "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html"
+
+- id: 73
+  author: AWS
+  title: "Lambda Container Images"
+  link: "https://docs.aws.amazon.com/lambda/latest/dg/images-create.html"
+
+- id: 74
+  author: AWS
+  title: "Lambda Runtime API"
+  link: "https://docs.aws.amazon.com/lambda/latest/dg/runtimes-api.html"
+
+- id: 75
+  author: AWS
+  title: "Amazon ECR - Container Registry"
+  link: "https://aws.amazon.com/ecr/"
+
+- id: 76
+  author: AWS
+  title: "Lambda Layers"
+  link: "https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"
+
+- id: 77
+  author: AWS
+  title: "Lambda Cold Start Performance"
+  link: "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html"
+
+- id: 78
+  author: AWS
+  title: "Lambda Provisioned Concurrency"
+  link: "https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html"
+
+- id: 79
+  author: AWS
+  title: "AWS SAM - Serverless Application Model"
+  link: "https://aws.amazon.com/serverless/sam/"
+
+- id: 80
+  author: AWS
+  title: "Amazon Inspector - Vulnerability Scanning"
+  link: "https://aws.amazon.com/inspector/"
+
+- id: 81
+  author: AWS
+  title: "ECR Image Scanning"
+  link: "https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html"
+
+- id: 82
+  author: HashiCorp
+  title: "Terraform - Infrastructure as Code"
+  link: "https://www.terraform.io/"
+
+- id: 83
+  author: AWS
+  title: "Terraform AWS Lambda Module"
+  link: "https://registry.terraform.io/modules/terraform-aws-modules/lambda/aws/latest"
+
+- id: 84
+  author: AWS
+  title: "AWS CloudFormation"
+  link: "https://aws.amazon.com/cloudformation/"
+
+- id: 85
+  author: AWS
+  title: "AWS CDK - Cloud Development Kit"
+  link: "https://aws.amazon.com/cdk/"
+
+- id: 86
+  author: Serverless Framework
+  title: "Serverless Framework"
+  link: "https://www.serverless.com/"
+
+- id: 87
+  author: AWS
+  title: "Lambda SnapStart for Java"
+  link: "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html"
+
+- id: 88
+  author: AWS
+  title: "Lambda Best Practices"
+  link: "https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html"
+
+- id: 89
+  author: Barry W. Boehm
+  title: "Software Engineering Economics"
+  link: "#"
+
+- id: 90
+  author: IBM Systems Sciences Institute
+  title: "Relative Cost of Fixing Defects - Business Systems Planning Guide (1981)"
+  link: "#"
+
+- id: 91
+  author: National Institute of Standards and Technology (NIST)
+  title: "The Economic Impacts of Inadequate Infrastructure for Software Testing - Planning Report 02-3 (2002)"
+  link: "https://www.nist.gov/system/files/documents/director/planning/report02-3.pdf"
+
+- id: 92
+  author: Neal Ford, Rebecca Parsons, Patrick Kua, Pramod Sadalage
+  title: "Building Evolutionary Architectures"
+  link: "#"
+
+- id: 93
+  author: Gloria Mark, Victor M. Gonzalez, Justin Harris
+  title: "No Task Left Behind? Examining the Nature of Fragmented Work - Proceedings of CHI 2005"
+  link: "https://doi.org/10.1145/1054972.1055017"
+
+- id: 94
+  author: Gloria Mark, Victor Gonzalez
+  title: "The Cost of Interrupted Work: More Speed and Stress - Proceedings of SIGCHI 2008"
+  link: "https://doi.org/10.1145/1357054.1357072"
+
+- id: 95
+  author: Synopsys
+  title: "Cost to Fix Bugs and Defects During Each Phase of the SDLC"
+  link: "https://www.synopsys.com/blogs/software-security/cost-to-fix-bugs-during-each-sdlc-phase/"
+
+- id: 96
+  author: Richard W. Selby
+  title: "Software Engineering: Barry W. Boehm's Lifetime Contributions to Software Development, Management, and Research"
+  link: "#"
