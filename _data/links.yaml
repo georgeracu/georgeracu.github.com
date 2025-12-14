@@ -477,3 +477,28 @@
   author: Richard W. Selby
   title: "Software Engineering: Barry W. Boehm's Lifetime Contributions to Software Development, Management, and Research"
   link: "#"
+
+- id: 97
+  author: Martin Fowler
+  title: "Reproducible Builds"
+  link: "https://martinfowler.com/bliki/ReproducibleBuild.html"
+
+- id: 98
+  author: Humble, Jez and Farley, David
+  title: "Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation"
+  link: "https://amzn.to/4fJ5V8K"
+
+- id: 99
+  author: Docker Inc.
+  title: "Docker Compose File Deploy Reference"
+  link: "https://docs.docker.com/compose/compose-file/deploy/"
+
+- id: 100
+  author: Mutagen
+  title: "Mutagen - High-Performance File Synchronisation"
+  link: "https://mutagen.io/"
+
+- id: 101
+  author: Tailscale Inc.
+  title: "Tailscale Knowledge Base"
+  link: "https://tailscale.com/kb/"

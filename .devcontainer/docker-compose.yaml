@@ -1,16 +1,17 @@
 version: "3.8"
 services:
   jekyll:
-    image: jekyll/jekyll:4.2.2
+    image: gir21/devcontainer-jekyll:2.7.8
     volumes:
-      - ../..:/srv/jekyll:cached
+      # - ..:/srv/jekyll:cached
       - bundle-cache:/usr/local/bundle
+      - ..:/workspace:cached
     command: sleep infinity
     environment:
       - JEKYLL_ENV=development
     ports:
       - "4000:4000"
-      - "35729:35729" # LiveReload
+      - "44004:44004" # LiveReload
     working_dir: /srv/jekyll
 
 volumes:
