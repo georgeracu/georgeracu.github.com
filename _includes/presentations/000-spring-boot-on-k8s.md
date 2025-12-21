@@ -402,3 +402,7 @@ spec:
 <hr/>
 
 ### All rights belong to their respective owners for images and logos used in this presentation.
+
+---
+
+{% include contact-info.md %}
