@@ -4,7 +4,7 @@ title: "Development Containers: How I Made My 10-Year-Old Laptop Useful Again"
 date: 2025-12-14
 categories: [development, containers, devops]
 tags: [dev-containers, docker, vscode, zed, development-environment, consistency, tailscale, raspberry-pi]
-permalink: /development-containers-on-old-laptop/
+permalink: /blog/articles/development-containers-on-old-laptop/
 ---
 
 ## tl;dr

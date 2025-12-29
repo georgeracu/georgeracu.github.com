@@ -502,3 +502,23 @@
   author: Tailscale Inc.
   title: "Tailscale Knowledge Base"
   link: "https://tailscale.com/kb/"
+
+- id: 102
+  author: Mike Cohn
+  title: "Succeeding with Agile: Software Development using Scrum"
+  link: "https://amzn.to/3XVgZ8k"
+
+- id: 103
+  author: Martin Fowler
+  title: "Test Pyramid"
+  link: "https://martinfowler.com/bliki/TestPyramid.html"
+
+- id: 104
+  author: Martin Fowler
+  title: "Microservice Testing"
+  link: "https://martinfowler.com/articles/microservice-testing/"
+
+- id: 105
+  author: Sam Newman
+  title: "Building Microservices: Designing Fine-Grained Systems, 2nd Edition"
+  link: "https://amzn.to/3ZPqR7j"
