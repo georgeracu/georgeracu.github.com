@@ -5,6 +5,7 @@ date: 2026-03-20
 tags: [post, development, ai, gomi-bunrui]
 description: "This is Part 1 of an ongoing series about building [Gomi Bunrui](https://gomi-bunrui.app), an AI-powered waste classification app for Japan, using AI tools at every layer of the stack."
 permalink: /blog/articles/building-gomi-bunrui-part-1/
+canonical_url: https://georgeracu.substack.com/p/i-used-8-ai-tools-to-build-and-ship
 mathjax: false
 ---
 
@@ -12,7 +13,7 @@ _This is Part 1 of an ongoing series about building [Gomi Bunrui](https://gomi-b
 
 ---
 
->Originally published on [Substack](https://open.substack.com/pub/georgeracu/p/i-used-8-ai-tools-to-build-and-ship?r=3cnvlt&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true)
+> Originally published on [Substack](https://georgeracu.substack.com/p/i-used-8-ai-tools-to-build-and-ship) on 20 March 2026.
 
 Over the past few weeks, I built and shipped a full-stack product as a solo developer, in my spare time. A production app with five Lambda functions (so far), a React PWA, bilingual support (English and Japanese), Cognito authentication, structured observability, CI/CD pipelines, 60+ test files, and a 24-document knowledge base.
 

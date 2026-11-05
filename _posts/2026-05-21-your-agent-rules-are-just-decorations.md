@@ -5,10 +5,11 @@ date: 2026-05-21
 tags: [post, ai, ai-agents, claude-code, constraint-enforcement]
 description: "I told my AI agent to use the obsidian CLI. It read the rule, admitted it knew the rule, and ignored the rule anyway. Loading a file is not the same as enforcing a constraint."
 permalink: /blog/articles/your-agent-rules-are-just-decorations/
+canonical_url: https://georgeracu.substack.com/p/your-agent-rules-are-just-decorations
 mathjax: false
 ---
 
->Originally published on [Substack](https://georgeracu.substack.com/p/your-agent-rules-are-just-decorations)
+> Originally published on [Substack](https://georgeracu.substack.com/p/your-agent-rules-are-just-decorations) on 21 May 2026.
 
 Only 1.6% of Claude Code's codebase is actually AI. The other 98.4% is plumbing: permission systems, tool dispatchers, context managers, safety checks. It's the sort of stat that makes you lean in and then immediately misinterpret what it's telling you. [^1]
 
@@ -109,4 +110,4 @@ I'm curious: when you write rules for your agents, how do you know they're actua
 
 ---
 
-_Follow: [Substack](https://georgeracu.substack.com/) · [Dev.to](https://dev.to/george3421) · [LinkedIn](https://www.linkedin.com/in/george-racu-70670443) · [X](https://x.com/georgeracu)_
+*Follow: [Substack](https://georgeracu.substack.com/) · [Dev.to](https://dev.to/george3421) · [LinkedIn](https://www.linkedin.com/in/george-racu-70670443) · [X](https://x.com/georgeracu)*
