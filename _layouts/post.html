@@ -11,6 +11,11 @@ layout: default
     {% endif %}
     
     <div class="post-content">
+        {% if page.sdd_skills_page %}
+        <blockquote class="sdd-skills-note">
+            <p>The skills have changed since this post. Read the current version on the <a href="{{ page.sdd_skills_page }}">SDD Skills site</a>.</p>
+        </blockquote>
+        {% endif %}
         {{ content }}
     </div>
 

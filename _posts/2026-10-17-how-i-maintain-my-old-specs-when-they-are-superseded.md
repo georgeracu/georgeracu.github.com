@@ -6,6 +6,7 @@ tags: [post, sdd, agent-harness, kiro, spec-driven-development, aidlc]
 description: "Spec maintenance annotates what a finished spec made wrong in older ones, with strikethroughs and work-item references and never deletions."
 permalink: /blog/articles/how-i-maintain-my-old-specs-when-they-are-superseded/
 canonical_url: https://georgeracu.substack.com/p/how-i-maintain-my-old-specs-when
+sdd_skills_page: https://georgeracu.github.io/sdd-skills/skills/spec-maintenance/
 mathjax: false
 ---
 
