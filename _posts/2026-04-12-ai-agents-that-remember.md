@@ -5,10 +5,11 @@ date: 2026-04-12
 tags: [post, development, ai, ai-agents, agent-memory, obsidian, gomi-bunrui]
 description: "A practitioner's guide to solving the 'Goldfish Effect' in AI sessions through a simple, markdown-based memory protocol."
 permalink: /blog/articles/ai-agents-that-remember/
+canonical_url: https://georgeracu.substack.com/p/ai-agents-that-remember-building
 mathjax: false
 ---
 
->Originally published on [Substack](https://georgeracu.substack.com/p/ai-agents-that-remember-building)
+> Originally published on [Substack](https://georgeracu.substack.com/p/ai-agents-that-remember-building) on 11 April 2026.
 
 ## The Problem: The Goldfish Effect
 

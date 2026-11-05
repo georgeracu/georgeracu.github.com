@@ -5,6 +5,7 @@ date: 2026-04-17
 tags: [post, development, ai, ai-agents, agent-memory, obsidian, gomi-bunrui]
 description: "A copy-paste setup guide for the agent memory protocol: from zero to a working memory system in an afternoon, with two paths: clone the template or extend an existing Obsidian vault."
 permalink: /blog/articles/building-agent-memory-system/
+canonical_url: https://georgeracu.substack.com/p/building-the-agent-memory-system
 mathjax: false
 ---
 
@@ -12,7 +13,7 @@ _This is part of an ongoing series about building [Gomi Bunrui](https://gomi-bun
 
 ---
 
->Originally published on [Substack](https://georgeracu.substack.com/p/building-the-agent-memory-system)
+> Originally published on [Substack](https://georgeracu.substack.com/p/building-the-agent-memory-system) on 15 April 2026.
 
 ## The Starting Point: From Zero to Memory
 

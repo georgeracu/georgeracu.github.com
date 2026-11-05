@@ -5,6 +5,7 @@ date: 2026-04-01
 tags: [post, development, ai, gomi-bunrui, toyota]
 description: "A strategic analysis of applying the Toyota 'Jidoka' principle to AI-assisted coding, exploring the balance between machine automation and human judgment to maintain software integrity."
 permalink: /blog/articles/jidoka-for-ai-assisted-coding/
+canonical_url: https://georgeracu.substack.com/p/the-jidoka-principle-strategic-quality
 mathjax: false
 ---
 
@@ -12,7 +13,7 @@ _This is part of an ongoing series about building [Gomi Bunrui](https://gomi-bun
 
 ---
 
->Originally published on [Substack](https://open.substack.com/pub/georgeracu/p/the-jidoka-principle-strategic-quality?r=3cnvlt&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true)
+> Originally published on [Substack](https://georgeracu.substack.com/p/the-jidoka-principle-strategic-quality) on 2 April 2026.
 
 In the rapidly evolving landscape of AI-assisted engineering, a subtle but dangerous failure mode has emerged: the erosion of critical oversight. During the development of Gomi Bunrui, I observed a recurring pattern of "silent defects" that bypassed manual review not because the AI was inherently incapable, but because the human operator accepted the output too quickly. The AI’s confidence, coupled with passing tests, created a false sense of security that masked deep-seated logic errors.
 

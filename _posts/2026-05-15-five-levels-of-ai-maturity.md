@@ -5,10 +5,11 @@ date: 2026-05-15
 tags: [post, ai-engineering, ai-sdlc, engineering-leadership, jidoka]
 description: "Why seat activation is a vanity metric and how to measure real AI maturity across an engineering organisation."
 permalink: /blog/articles/five-levels-of-ai-maturity/
+canonical_url: https://georgeracu.substack.com/p/five-levels-of-ai-maturity
 mathjax: false
 ---
 
->Originally published on [Substack](https://georgeracu.substack.com/p/five-levels-of-ai-maturity)
+> Originally published on [Substack](https://georgeracu.substack.com/p/five-levels-of-ai-maturity) on 15 May 2026.
 
 A few months into any corporate AI rollout, things start to feel a bit flat. The "seat activation" numbers look great on the slide deck: 80% of developers have the plugin installed, and everyone is nodding along to the 25% suggestion acceptance rate. Most managers are happy to see a green bar on a chart, as it looks like a win for the quarterly budget.
 
@@ -73,4 +74,4 @@ We’re moving from an era where we "use AI" to one where we "partner with agent
 
 ---
 
-_Follow: [Substack](https://georgeracu.substack.com/) · [Dev.to](https://dev.to/george3421) · [LinkedIn](https://www.linkedin.com/in/george-racu-70670443) · [X](https://x.com/georgeracu)_
+*Follow: [Substack](https://georgeracu.substack.com/) · [Dev.to](https://dev.to/george3421) · [LinkedIn](https://www.linkedin.com/in/george-racu-70670443) · [X](https://x.com/georgeracu)*
