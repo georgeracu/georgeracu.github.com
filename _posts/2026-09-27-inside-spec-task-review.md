@@ -6,6 +6,7 @@ tags: [post, software-assembly-line, sdd, ai-assisted-coding]
 description: "The second gate of the SDD pipeline: the task review that runs after tasks.md is approved and before QA planning. Five checks, three verdicts, five reviews that never blocked, and a MINOR finding the "
 permalink: /blog/articles/inside-spec-task-review/
 canonical_url: https://georgeracu.substack.com/p/inside-spec-task-review
+sdd_skills_page: https://georgeracu.github.io/sdd-skills/skills/spec-task-review/
 mathjax: false
 ---
 

@@ -6,6 +6,7 @@ tags: [post, ai-tools, sdd, ai-assisted-coding, kiro, quality, spec-driven-devel
 description: "Why three artifacts aren't enough for production AI development and how I built a 7-pillar SDD workflow with automated quality gates."
 permalink: /blog/articles/beyond-kiro-engineering-quality-gates-for-ai-agents/
 canonical_url: https://georgeracu.substack.com/p/beyond-kiro-engineering-quality-gates
+sdd_skills_page: https://georgeracu.github.io/sdd-skills/
 mathjax: false
 ---
 
