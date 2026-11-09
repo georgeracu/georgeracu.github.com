@@ -8,8 +8,8 @@
     {% include google-analytics.html %}
     {% endif %}
 
-    <link rel="stylesheet" href="{{'/assets/css/bootstrap.min.css' | prepend: site.url}}">
-    <link rel="stylesheet" href="{{'/assets/css/custom-remark.css' | prepend: site.url}}">
+    <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/custom-remark.css' | relative_url }}">
 
     {% seo %}
 </head>

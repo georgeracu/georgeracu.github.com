@@ -3,7 +3,7 @@ title: George Racu
 email: me@georgeracu.com
 description: "George Racu's personal page."
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://georgeracu.github.io" # the base hostname & protocol for your site
+url: "https://georgeracu.com" # the base hostname & protocol for your site
 twitter_username: georgeracu
 github_username: georgeracu
 linkedin_url: "https://www.linkedin.com/in/george-racu-70670443/"
