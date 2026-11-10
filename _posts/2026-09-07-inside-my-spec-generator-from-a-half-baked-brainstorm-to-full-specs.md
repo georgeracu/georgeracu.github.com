@@ -6,7 +6,7 @@ tags: [post, sdd, software-engineering, ai-assisted-coding, agent-harness, spec-
 description: "A walkthrough of the SDD workhorse: three phases, two gates, EARS notation, and the small task-sequencing rules that stop the implementing agent ad-libbing."
 permalink: /blog/articles/inside-my-spec-generator-from-a-half-baked-brainstorm-to-full-specs/
 canonical_url: https://georgeracu.substack.com/p/inside-my-spec-generator-from-a-half
-sdd_skills_page: https://georgeracu.github.io/sdd-skills/skills/spec-generator/
+sdd_skills_page: https://georgeracu.com/sdd-skills/skills/spec-generator/
 mathjax: false
 ---
 
