@@ -6,7 +6,7 @@ tags: [post, sdd, agent-harness, aidlc]
 description: "The Spec Workflow skill is a reference rather than an orchestrator."
 permalink: /blog/articles/inside-spec-workflow/
 canonical_url: https://georgeracu.substack.com/p/inside-spec-workflow
-sdd_skills_page: https://georgeracu.github.io/sdd-skills/skills/spec-workflow/
+sdd_skills_page: https://georgeracu.com/sdd-skills/skills/spec-workflow/
 mathjax: false
 ---
 

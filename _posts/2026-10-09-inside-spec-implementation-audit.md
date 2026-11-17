@@ -6,7 +6,7 @@ tags: [post, sdd, ai-assisted-coding, agent-harness, spec-driven-development]
 description: "The implementation audit is the gate that refuses to take the agent's word for the build: six checks, three severities and pasted output instead of claims."
 permalink: /blog/articles/inside-spec-implementation-audit/
 canonical_url: https://georgeracu.substack.com/p/inside-spec-implementation-audit
-sdd_skills_page: https://georgeracu.github.io/sdd-skills/skills/spec-implementation-audit/
+sdd_skills_page: https://georgeracu.com/sdd-skills/skills/spec-implementation-audit/
 mathjax: false
 ---
 

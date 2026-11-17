@@ -20,3 +20,5 @@ markdown: kramdown
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-sitemap

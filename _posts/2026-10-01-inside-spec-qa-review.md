@@ -6,7 +6,7 @@ tags: [post, software-assembly-line, sdd, ai-assisted-coding, ai-agents]
 description: "The QA skill runs twice: plan mode writes test-plan.md before any code exists, review mode fills the Actual column afterwards."
 permalink: /blog/articles/inside-spec-qa-review/
 canonical_url: https://georgeracu.substack.com/p/inside-spec-qa-review
-sdd_skills_page: https://georgeracu.github.io/sdd-skills/skills/spec-qa-review/
+sdd_skills_page: https://georgeracu.com/sdd-skills/skills/spec-qa-review/
 mathjax: false
 ---
 

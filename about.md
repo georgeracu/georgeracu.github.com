@@ -18,7 +18,7 @@ permalink: /about/
 <h2>Projects</h2>
 
 <div class="job-entry">
-<h3 class="job-title"><a href="https://georgeracu.github.io/sdd-skills/">SDD Skills</a> <span class="job-period">(2026 - Present)</span></h3>
+<h3 class="job-title"><a href="https://georgeracu.com/sdd-skills/">SDD Skills</a> <span class="job-period">(2026 - Present)</span></h3>
 <p class="job-description">Open-source agent skills for spec-driven development: EARS requirements, a design, design and task reviews that block on critical findings, an implementation audit backed by pasted build and test output, and maintenance for the specs a change supersedes. They install as a Claude Code plugin and are MIT licensed.</p>
 </div>
 </section>

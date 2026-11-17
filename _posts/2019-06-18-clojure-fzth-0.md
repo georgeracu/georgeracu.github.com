@@ -1,5 +1,6 @@
 ---
 layout: post
+redirect_from: /2019/06/18/clojure-fzth-0.html
 title: "Clojure from zero to hero (0) - creating a Pedestal app"
 date: 2019-06-18 07:00:00 +0000
 tags: [programming, clojure]

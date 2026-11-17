@@ -6,7 +6,7 @@ tags: [post, sdd, ai-assisted-coding, agent-harness]
 description: "The first gate of the SDD pipeline: the design review that runs after design.md is approved and before tasks.md is generated."
 permalink: /blog/articles/how-i-review-specs-against-the-codebase/
 canonical_url: https://georgeracu.substack.com/p/how-i-review-specs-against-the-codebase
-sdd_skills_page: https://georgeracu.github.io/sdd-skills/skills/spec-design-review/
+sdd_skills_page: https://georgeracu.com/sdd-skills/skills/spec-design-review/
 mathjax: false
 ---
 
