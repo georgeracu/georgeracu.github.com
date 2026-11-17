@@ -1,14 +1,13 @@
 # Site settings
 title: George Racu
 email: me@georgeracu.com
-description: "George Racu's personal page."
+description: "I build and roll out AI coding agents that teams can trust: specs, gates and evals. Maintainer of sdd-skills."
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://georgeracu.com" # the base hostname & protocol for your site
 twitter_username: georgeracu
 github_username: georgeracu
 linkedin_url: "https://www.linkedin.com/in/george-racu-70670443/"
 substack_url: "https://georgeracu.substack.com/"
-google_analytics: UA-53216185-7
 
 # theme: alembic-jekyll-theme
 theme: minima

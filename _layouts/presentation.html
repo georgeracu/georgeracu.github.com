@@ -4,9 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>{{ page.title | strip_html }}</title>
-    {% if jekyll.environment == 'production' and site.google_analytics %}
-    {% include google-analytics.html %}
-    {% endif %}
+    {% include goatcounter.html %}
 
     <link rel="stylesheet" href="{{ '/assets/css/bootstrap.min.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/custom-remark.css' | relative_url }}">
